@@ -190,8 +190,31 @@ def test_remove_all_stripe_on_data(data, flats, darks):
     )
     assert_allclose(np.median(data_after_stripe_removal), 0.015338, rtol=1e-04)
     assert_allclose(np.max(data_after_stripe_removal), 2.298123, rtol=1e-05)
+    assert_allclose(np.median(data_after_stripe_removal, axis=(1, 2)).sum(), 2.788046, rtol=1e-6)
+    assert_allclose(np.median(data_after_stripe_removal, axis=(0, 1)).sum(), 28.661312, rtol=1e-6)
 
     data = None  #: free up GPU memory
     # make sure the output is float32
     assert data_after_stripe_removal.dtype == np.float32
     assert data_after_stripe_removal.flags.c_contiguous
+
+
+@pytest.mark.perf
+def test_remove_all_stripe_performance(ensure_clean_memory):
+    data_host = (
+        np.random.random_sample(size=(1801, 100, 2560)).astype(np.float32) * 2.0 + 0.001
+    )
+    data = cp.asarray(data_host, dtype=np.float32)
+    remove_all_stripe(cp.copy(data))
+    dev = cp.cuda.Device()
+    dev.synchronize()
+    start = time.perf_counter_ns()
+    nvtx.RangePush("Core")
+    for _ in range(10):
+        # have to take copy, as data is modified in-place
+        remove_all_stripe(cp.copy(data))
+    nvtx.RangePop()
+    dev.synchronize()
+    duration_ms = float(time.perf_counter_ns() - start) * 1e-6 / 10
+
+    assert "performance in ms" == duration_ms
