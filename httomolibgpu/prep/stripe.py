@@ -201,13 +201,11 @@ def remove_all_stripe(
         Corrected 3D tomographic data as a CuPy or NumPy array.
 
     """
-    matindex = _create_matindex(data.shape[2], data.shape[0])
     for m in range(data.shape[1]):
-        sino = data[:, m, :]
-        sino = _rs_dead(sino, snr, la_size, matindex)
-        sino = _rs_sort(sino, sm_size, dim)
-        sino = cp.nan_to_num(sino)
-        data[:, m, :] = sino
+        data[:, m, :] = _rs_dead(data[:, m, :], snr, la_size)
+        data[:, m, :] = _rs_sort(data[:, m, :], sm_size, dim)
+        data[:, m, :]  = cp.nan_to_num(data[:, m, :])
+
     return data
 
 
@@ -252,7 +250,7 @@ def _detect_stripe(listdata, snr):
     return listmask
 
 
-def _rs_large(sinogram, snr, size, matindex, drop_ratio=0.1, norm=True):
+def _rs_large(sinogram, snr, size, drop_ratio=0.1, norm=True):
     """
     Remove large stripes.
     """
@@ -264,35 +262,35 @@ def _rs_large(sinogram, snr, size, matindex, drop_ratio=0.1, norm=True):
     list1 = cp.mean(sinosort[ndrop : nrow - ndrop], axis=0)
     list2 = cp.mean(sinosmooth[ndrop : nrow - ndrop], axis=0)
     listfact = list1 / list2
-
     # Locate stripes
     listmask = _detect_stripe(listfact, snr)
     listmask = binary_dilation(listmask, iterations=1).astype(listmask.dtype)
-    matfact = cp.tile(listfact, (nrow, 1))
+
     # Normalize
-    if norm is True:
-        sinogram = sinogram / matfact
-    sinogram1 = cp.transpose(sinogram)
-    matcombine = cp.asarray(cp.dstack((matindex, sinogram1)))
+    if norm:
+        sinogram /= cp.tile(listfact, (nrow, 1))
 
-    ids = cp.argsort(matcombine[:, :, 1], axis=1)
-    matsort = matcombine.copy()
-    matsort[:, :, 0] = cp.take_along_axis(matsort[:, :, 0], ids, axis=1)
-    matsort[:, :, 1] = cp.take_along_axis(matsort[:, :, 1], ids, axis=1)
+    sino_transposed = sinogram.T
+    ids_sort = cp.argsort(sino_transposed, axis=1)
 
-    matsort[:, :, 1] = cp.transpose(sinosmooth)
-    ids = cp.argsort(matsort[:, :, 0], axis=1)
-    matsortback = matsort.copy()
-    matsortback[:, :, 0] = cp.take_along_axis(matsortback[:, :, 0], ids, axis=1)
-    matsortback[:, :, 1] = cp.take_along_axis(matsortback[:, :, 1], ids, axis=1)
+    # Apply sorting without explicit matindex
+    sino_sorted = cp.take_along_axis(sino_transposed, ids_sort, axis=1)
 
-    sino_corrected = cp.transpose(matsortback[:, :, 1])
+    # Smoothen sorted sinogram
+    sino_sorted[:, :] = cp.transpose(sinosmooth)
+
+    # Restore original order
+    ids_restore = cp.argsort(ids_sort, axis=1)
+    sino_corrected = cp.take_along_axis(sino_sorted, ids_restore, axis=1).T
+
+    # Apply corrections only to affected columns
     listxmiss = cp.where(listmask > 0.0)[0]
     sinogram[:, listxmiss] = sino_corrected[:, listxmiss]
+
     return sinogram
 
 
-def _rs_dead(sinogram, snr, size, matindex, norm=True):
+def _rs_dead(sinogram, snr, size, norm=True):
     """remove unresponsive and fluctuating stripes"""
     sinogram = cp.copy(sinogram)  # Make it mutable
     (nrow, _) = sinogram.shape
@@ -316,14 +314,15 @@ def _rs_dead(sinogram, snr, size, matindex, norm=True):
     if len(listxmiss) > 0:
         ids = cp.searchsorted(listx, listxmiss)
         weights = (listxmiss - listx[ids - 1]) / (listx[ids] - listx[ids - 1])
-        # direct interpolation without making an extra copy
-        sinogram[:, listxmiss] = sinogram[:, listx[ids - 1]] + weights * (
-            sinogram[:, listx[ids]] - sinogram[:, listx[ids - 1]]
-        )
+        left_vals = cp.take(sinogram, listx[ids - 1], axis=1)
+        right_vals = cp.take(sinogram, listx[ids], axis=1)
+        diff = right_vals - left_vals
+        diff *= weights
+        sinogram[:, listxmiss] = left_vals + diff
 
     # Remove residual stripes
     if norm is True:
-        sinogram = _rs_large(sinogram, snr, size, matindex)
+        sinogram = _rs_large(sinogram, snr, size)
     return sinogram
 
 
@@ -416,12 +415,3 @@ def raven_filter(
     data = data[pad_y : height - pad_y, :, pad_x : width - pad_x].real
 
     return cp.require(data, requirements="C")
-
-
-def _create_matindex(nrow, ncol):
-    """
-    Create a 2D array of indexes used for the sorting technique.
-    """
-    listindex = cp.arange(0.0, ncol, 1.0)
-    matindex = cp.tile(listindex, (nrow, 1))
-    return matindex.astype(np.float32)

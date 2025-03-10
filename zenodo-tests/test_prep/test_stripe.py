@@ -135,6 +135,38 @@ def test_remove_all_stripe_i12_dataset4(
 
 
 @pytest.mark.parametrize(
+    "dataset_fixture, snr_val, la_size_val, sm_size_val, norm_res_expected",
+    [
+        ("synth_tomophantom1_dataset", 1.0, 61, 21, 53435.61),
+        ("synth_tomophantom1_dataset", 0.1, 61, 21, 67917.71),
+        ("synth_tomophantom1_dataset", 0.001, 61, 21, 70015.51),
+    ],
+    ids=["snr_1", "snr_2", "snr_3"],
+)
+def test_remove_all_stripe_synth_tomophantom1_dataset(
+    request, dataset_fixture, snr_val, la_size_val, sm_size_val, norm_res_expected
+):
+    dataset = request.getfixturevalue(dataset_fixture)
+    force_clean_gpu_memory()
+
+    output = remove_all_stripe(
+        cp.copy(dataset[0]),
+        snr=snr_val,
+        la_size=la_size_val,
+        sm_size=sm_size_val,
+        dim=1,
+    )
+
+    residual_calc = dataset[0] - output
+    norm_res = cp.linalg.norm(residual_calc.flatten())
+
+    assert isclose(norm_res, norm_res_expected, abs_tol=10**-2)
+    assert not np.isnan(output).any(), "Output contains NaN values"
+    assert output.dtype == np.float32
+    assert output.flags.c_contiguous
+
+
+@pytest.mark.parametrize(
     "dataset_fixture, nvalue_val, vvalue_val, norm_res_expected",
     [
         ("i12_dataset4", 2, 4, 94.0996),

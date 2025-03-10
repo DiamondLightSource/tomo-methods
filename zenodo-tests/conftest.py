@@ -185,6 +185,20 @@ def geant4_dataset1(geant4_dataset1_file):
     )
 
 
+@pytest.fixture(scope="session")
+def synth_tomophantom1_file(test_data_path):
+    in_file = os.path.join(test_data_path, "synth_tomophantom1.npz")
+    return np.load(in_file)
+
+
+@pytest.fixture
+def synth_tomophantom1_dataset(synth_tomophantom1_file):
+    return (
+        cp.asarray(cp.swapaxes(synth_tomophantom1_file["projdata"], 0, 1)),
+        synth_tomophantom1_file["angles"],
+    )
+
+
 @pytest.fixture
 def ensure_clean_memory():
     gc.collect()

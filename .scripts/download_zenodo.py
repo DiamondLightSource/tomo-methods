@@ -18,15 +18,15 @@ def calculate_md5(filename):
 
 def download_zenodo_files(output_dir: Path):
     """
-    Download all files from Zenodo record 14938787 and verify their checksums.
+    Download all files from Zenodo record 14979785 and verify their checksums.
 
     Args:
         output_dir: Directory where files should be downloaded
     """
     try:
-        print("Fetching files from Zenodo record 14938787...")
+        print("Fetching files from Zenodo record 14979785...")
         with urllib.request.urlopen(
-            "https://zenodo.org/api/records/14938787"
+            "https://zenodo.org/api/records/14979785"
         ) as response:
             data = json.loads(response.read())
 
