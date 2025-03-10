@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rescale to integers &#8212; HTTomolibgpu Documentation page</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=de0cdcf2"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/methods_list/rescale_to_int';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API reference" href="../api.html" />
+    <link rel="prev" title="Raven filter" href="raven_filter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Mar 10, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">HTTomolibgpu Documentation page</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/about.html">HTTomolibGPU</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference guides</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../methods.html">Methods Description</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="median_filter.html">Median filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outlier_removal.html">Outliers removal filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="total_variation_ROF.html">Total Variation denoising (ROF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="total_variation_PD.html">Total Variation denoising (PD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remove_stripe_based_sorting.html">Remove stripes by sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remove_all_stripe.html">Remove stripes combo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remove_stripe_ti.html">Remove stripes Titarenko</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raven_filter.html">Raven filter</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Rescale to integers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.misc.corr.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.corr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.misc.denoise.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.denoise</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.misc.morph.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.morph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.misc.rescale.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.rescale</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.prep.alignment.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.prep.normalize.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.normalize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.prep.phase.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.phase</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.prep.stripe.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.stripe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.recon.algorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.algorithm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/httomolibgpu.recon.rotation.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.rotation</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bibliography/biblio.html">Bibliography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../examples/pipeline1_FBP.html">Example 1 (FBP and Fourier)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/pipeline2_iterative.html">Example 2 (Iterative Rec)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/DistortionCorr.html">Example 3 (Distortion corr)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/reference/methods_list/rescale_to_int.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Rescale to integers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="rescale-to-integers">
+<span id="method-rescale-to-int"></span><h1>Rescale to integers<a class="headerlink" href="#rescale-to-integers" title="Link to this heading">#</a></h1>
+<p><strong>Description</strong></p>
+<p>This method is used to rescale the data before it gets saved into the images. The method allows you to rescale the data into 8, 16,
+or 32 bit of unsigned integer as well as to use the percentage scaling (explained bellow) to enhance contrast and remove outliers in the resulting images.</p>
+<p><strong>Where and how to use it:</strong></p>
+<p>The main purpose of this module is to help saving the data into images with rescaling. If the bit depth is reduced in the data, it can help to reduce the size of the saved images and in some situations simplify and accelerate of data analysis.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is worth to note, however, that it is a lossy conversion when the bit depth of data is reduced. This can significantly alter the visual perception of the data as well as the quantitative side.</p>
+</div>
+<p>The rescaling module allows you to change the bit depth of a grayscale image, e.g., from 16-bit to 8-bit and also rescale the data in advance to avoid
+clipping of the data and therefore the loss of the information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method does not save the data into images automatically, but only rescale the data. The user needs to take care of saving the data using an image saving method, e.g., the <a class="reference external" href="https://diamondlightsource.github.io/httomolib/api/httomolib.misc.images.html">image saver</a> of the HTTomolib library.</p>
+</div>
+<p><strong>What are the adjustable parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">bits</span></code> defines the number of bits in the resulting data. The input can be any data type and will be rescaled into unsigned integer of 8, 16 or 32 bit type.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">perc_range_min</span></code> defines the lower cutoff point in the input data, in percent of the data range (defaults to 0). The lower bound is computed as <span class="math notranslate nohighlight">\(\frac{\textrm{perc_range_min} * (\max-\min)}{100} + \min\)</span>. Note that <span class="math notranslate nohighlight">\(\max\)</span> and <span class="math notranslate nohighlight">\(\min\)</span> values will be automatically estimated from the input data, unless they are provided with the <cite>glob_stats</cite> optional parameter.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">perc_range_max</span></code> defines the upper cutoff point in the input data, in percent of the data range (defaults to 100). The higher bound is computed as <span class="math notranslate nohighlight">\(\frac{\textrm{perc_range_max} * (\max-\min)}{100} + \min\)</span>.</p></li>
+</ul>
+<p><strong>Practical example:</strong></p>
+<p>In this example we demonstrate how to use the rescaling when saving the data from float 32-bit precision into rescaled 8-bit.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default" id="id1">
+<img alt="../../_images/rescale_to_int_proj_0_to_100.png" src="../../_images/rescale_to_int_proj_0_to_100.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Projection data saved into 8-bit image with <code class="code docutils literal notranslate"><span class="pre">perc_range_min</span> <span class="pre">=</span> <span class="pre">0</span></code> and <code class="code docutils literal notranslate"><span class="pre">perc_range_max</span> <span class="pre">=</span> <span class="pre">100</span></code> scaling.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id2">
+<img alt="../../_images/rescale_to_int_histo_0_to_100.png" src="../../_images/rescale_to_int_histo_0_to_100.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">The corresponding histogram of the image to the left. Note that the background contains high values (250-255) and they dominate the image which is what reflected in the histogram.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-default" id="id3">
+<img alt="../../_images/rescale_to_int_proj_10_to_90.png" src="../../_images/rescale_to_int_proj_10_to_90.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Projection data saved into 8-bit image with <code class="code docutils literal notranslate"><span class="pre">perc_range_min</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="code docutils literal notranslate"><span class="pre">perc_range_max</span> <span class="pre">=</span> <span class="pre">90</span></code> scaling. Note that the contrast appears to be better with this scaling.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id4">
+<img alt="../../_images/rescale_to_int_histo_10_to_90.png" src="../../_images/rescale_to_int_histo_10_to_90.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">The corresponding histogram of the image to the left. Note that the background is now outside the range and the histogram shows a good distribution of values withing the [0,128] range. If possible, however, it is better to aim for a wider histogram which represents the image well within the given range.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default" id="id5">
+<img alt="../../_images/rescale_to_int_proj_30_to_70.png" src="../../_images/rescale_to_int_proj_30_to_70.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Projection data saved into 8-bit image with <code class="code docutils literal notranslate"><span class="pre">perc_range_min</span> <span class="pre">=</span> <span class="pre">30</span></code> and <code class="code docutils literal notranslate"><span class="pre">perc_range_max</span> <span class="pre">=</span> <span class="pre">70</span></code> scaling. This is en example of a poorer scaling when the loss of the information is clearly visible through poorer contrast.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id6">
+<img alt="../../_images/rescale_to_int_histo_30_to_70.png" src="../../_images/rescale_to_int_histo_30_to_70.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">The corresponding histogram of the image to the left. Note that the histogram has been significantly flattened with this scaling. Meaning that there is less values that represent the image in the selected range. And the histogram also has got less variation of values compared to the histogram without percentage scaling. Such flat histograms is best to avoid.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="raven_filter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Raven filter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../api.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Imaging Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Diamond Light Source.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Mar 10, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

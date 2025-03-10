@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>httomolibgpu.recon.algorithm &#8212; HTTomolibgpu Documentation page</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=de0cdcf2"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/httomolibgpu/recon/algorithm';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Mar 10, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">HTTomolibgpu Documentation page</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/about.html">HTTomolibGPU</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/methods.html">Methods Description</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/median_filter.html">Median filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/outlier_removal.html">Outliers removal filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/total_variation_ROF.html">Total Variation denoising (ROF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/total_variation_PD.html">Total Variation denoising (PD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_stripe_based_sorting.html">Remove stripes by sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_all_stripe.html">Remove stripes combo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_stripe_ti.html">Remove stripes Titarenko</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/raven_filter.html">Raven filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/rescale_to_int.html">Rescale to integers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/api.html">API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.corr.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.corr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.denoise.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.denoise</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.morph.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.morph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.rescale.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.rescale</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.alignment.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.normalize.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.normalize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.phase.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.phase</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.stripe.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.stripe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.recon.algorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.algorithm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.recon.rotation.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.rotation</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography/biblio.html">Bibliography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/pipeline1_FBP.html">Example 1 (FBP and Fourier)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/pipeline2_iterative.html">Example 2 (Iterative Rec)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/DistortionCorr.html">Example 3 (Distortion corr)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for httomolibgpu.recon.algorithm</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Copyright 2022 Diamond Light Source Ltd.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Created By  : Tomography Team at DLS &lt;scientificsoftware@diamond.ac.uk&gt;</span>
+<span class="c1"># Changes relative to ToMoBAR 2024.01 version</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="sd">&quot;&quot;&quot;Module for tomographic reconstruction&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">httomolibgpu</span><span class="w"> </span><span class="kn">import</span> <span class="n">cupywrapper</span>
+
+<span class="n">cp</span> <span class="o">=</span> <span class="n">cupywrapper</span><span class="o">.</span><span class="n">cp</span>
+<span class="n">cupy_run</span> <span class="o">=</span> <span class="n">cupywrapper</span><span class="o">.</span><span class="n">cupy_run</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mock</span>
+
+<span class="k">if</span> <span class="n">cupy_run</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">tomobar.methodsDIR_CuPy</span><span class="w"> </span><span class="kn">import</span> <span class="n">RecToolsDIRCuPy</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">tomobar.methodsIR_CuPy</span><span class="w"> </span><span class="kn">import</span> <span class="n">RecToolsIRCuPy</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">RecToolsDIRCuPy</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">RecToolsIRCuPy</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">float32</span><span class="p">,</span> <span class="n">complex64</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Type</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;FBP&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LPRec&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SIRT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CGLS&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">input_data_axis_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;angles&quot;</span><span class="p">,</span> <span class="s2">&quot;detY&quot;</span><span class="p">,</span> <span class="s2">&quot;detX&quot;</span><span class="p">]</span>  <span class="c1"># set the labels of the input data</span>
+
+
+<span class="c1">## %%%%%%%%%%%%%%%%%%%%%%% FBP reconstruction %%%%%%%%%%%%%%%%%%%%%%%%%%%%  ##</span>
+<div class="viewcode-block" id="FBP">
+<a class="viewcode-back" href="../../../api/httomolibgpu.recon.algorithm.html#httomolibgpu.recon.algorithm.FBP">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">FBP</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">filter_freq_cutoff</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.35</span><span class="p">,</span>
+    <span class="n">recon_size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">recon_mask_radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>
+    <span class="n">neglog</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">gpu_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform Filtered Backprojection (FBP) reconstruction using ASTRA toolbox :cite:`van2016fast` and</span>
+<span class="sd">    ToMoBAR :cite:`kazantsev2020tomographic` wrappers.</span>
+<span class="sd">    This is a 3D recon from the CuPy array directly and using a custom built SINC filter for filtration in Fourier space.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : cp.ndarray</span>
+<span class="sd">        Projection data as a CuPy array.</span>
+<span class="sd">    angles : np.ndarray</span>
+<span class="sd">        An array of angles given in radians.</span>
+<span class="sd">    center : float, optional</span>
+<span class="sd">        The center of rotation (CoR).</span>
+<span class="sd">    filter_freq_cutoff : float</span>
+<span class="sd">        Cutoff frequency parameter for the SINC filter, the lower values produce better contrast but noisy reconstruction.</span>
+<span class="sd">    recon_size : int, optional</span>
+<span class="sd">        The [recon_size, recon_size] shape of the reconstructed slice in pixels.</span>
+<span class="sd">        By default (None), the reconstructed size will be the dimension of the horizontal detector.</span>
+<span class="sd">    recon_mask_radius: float</span>
+<span class="sd">        The radius of the circular mask that applies to the reconstructed slice in order to crop</span>
+<span class="sd">        out some undesirable artifacts. The values outside the given diameter will be set to zero.</span>
+<span class="sd">        It is recommended to keep the value in the range [0.7-1.0].</span>
+<span class="sd">    neglog: bool</span>
+<span class="sd">        Take negative logarithm on input data to convert to attenuation coefficient or a density of the scanned object. Defaults to False,</span>
+<span class="sd">        assuming that the negative log is taken either in normalisation procedure on with Paganin filter application.</span>
+<span class="sd">    gpu_id : int</span>
+<span class="sd">        A GPU device index to perform operation on.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cp.ndarray</span>
+<span class="sd">        The FBP reconstructed volume as a CuPy array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">RecToolsCP</span> <span class="o">=</span> <span class="n">_instantiate_direct_recon_class</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">recon_size</span><span class="p">,</span> <span class="n">gpu_id</span>
+    <span class="p">)</span>
+
+    <span class="n">reconstruction</span> <span class="o">=</span> <span class="n">RecToolsCP</span><span class="o">.</span><span class="n">FBP</span><span class="p">(</span>
+        <span class="n">_take_neg_log</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">neglog</span> <span class="k">else</span> <span class="n">data</span><span class="p">,</span>
+        <span class="n">cutoff_freq</span><span class="o">=</span><span class="n">filter_freq_cutoff</span><span class="p">,</span>
+        <span class="n">recon_mask_radius</span><span class="o">=</span><span class="n">recon_mask_radius</span><span class="p">,</span>
+        <span class="n">data_axes_labels_order</span><span class="o">=</span><span class="n">input_data_axis_labels</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">_default_memory_pool</span><span class="o">.</span><span class="n">free_all_blocks</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">reconstruction</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">requirements</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="c1">## %%%%%%%%%%%%%%%%%%%%%%% LPRec  %%%%%%%%%%%%%%%%%%%%%%%%%%%%  ##</span>
+<div class="viewcode-block" id="LPRec">
+<a class="viewcode-back" href="../../../api/httomolibgpu.recon.algorithm.html#httomolibgpu.recon.algorithm.LPRec">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">LPRec</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">recon_size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">recon_mask_radius</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>
+    <span class="n">neglog</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fourier direct inversion in 3D on unequally spaced (also called as Log-Polar) grids using</span>
+<span class="sd">    CuPy array as an input. This implementation follows V. Nikitin&#39;s CUDA-C implementation and TomoCuPy package.</span>
+<span class="sd">    :cite:`andersson2016fast`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : cp.ndarray</span>
+<span class="sd">        Projection data as a CuPy array.</span>
+<span class="sd">    angles : np.ndarray</span>
+<span class="sd">        An array of angles given in radians.</span>
+<span class="sd">    center : float, optional</span>
+<span class="sd">        The center of rotation (CoR).</span>
+<span class="sd">    recon_size : int, optional</span>
+<span class="sd">        The [recon_size, recon_size] shape of the reconstructed slice in pixels.</span>
+<span class="sd">        By default (None), the reconstructed size will be the dimension of the horizontal detector.</span>
+<span class="sd">    recon_mask_radius: float</span>
+<span class="sd">        The radius of the circular mask that applies to the reconstructed slice in order to crop</span>
+<span class="sd">        out some undesirable artifacts. The values outside the given diameter will be set to zero.</span>
+<span class="sd">        It is recommended to keep the value in the range [0.7-1.0].</span>
+<span class="sd">    neglog: bool</span>
+<span class="sd">        Take negative logarithm on input data to convert to attenuation coefficient or a density of the scanned object. Defaults to False,</span>
+<span class="sd">        assuming that the negative log is taken either in normalisation procedure on with Paganin filter application.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cp.ndarray</span>
+<span class="sd">        The Log-polar Fourier reconstructed volume as a CuPy array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">RecToolsCP</span> <span class="o">=</span> <span class="n">_instantiate_direct_recon_class</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">recon_size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">reconstruction</span> <span class="o">=</span> <span class="n">RecToolsCP</span><span class="o">.</span><span class="n">FOURIER_INV</span><span class="p">(</span>
+        <span class="n">_take_neg_log</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">neglog</span> <span class="k">else</span> <span class="n">data</span><span class="p">,</span>
+        <span class="n">recon_mask_radius</span><span class="o">=</span><span class="n">recon_mask_radius</span><span class="p">,</span>
+        <span class="n">data_axes_labels_order</span><span class="o">=</span><span class="n">input_data_axis_labels</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">_default_memory_pool</span><span class="o">.</span><span class="n">free_all_blocks</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">reconstruction</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">requirements</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="c1">## %%%%%%%%%%%%%%%%%%%%%%% SIRT reconstruction %%%%%%%%%%%%%%%%%%%%%%%%%%%%  ##</span>
+<div class="viewcode-block" id="SIRT">
+<a class="viewcode-back" href="../../../api/httomolibgpu.recon.algorithm.html#httomolibgpu.recon.algorithm.SIRT">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">SIRT</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">recon_size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">iterations</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="n">nonnegativity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">neglog</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">gpu_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform Simultaneous Iterative Recostruction Technique (SIRT) using ASTRA toolbox :cite:`van2016fast` and</span>
+<span class="sd">    ToMoBAR :cite:`kazantsev2020tomographic` wrappers.</span>
+<span class="sd">    This is 3D recon directly from a CuPy array while using ASTRA GPUlink capability to avoid host-device</span>
+<span class="sd">    transactions for projection and backprojection.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : cp.ndarray</span>
+<span class="sd">        Projection data as a CuPy array.</span>
+<span class="sd">    angles : np.ndarray</span>
+<span class="sd">        An array of angles given in radians.</span>
+<span class="sd">    center : float, optional</span>
+<span class="sd">        The center of rotation (CoR).</span>
+<span class="sd">    recon_size : int, optional</span>
+<span class="sd">        The [recon_size, recon_size] shape of the reconstructed slice in pixels.</span>
+<span class="sd">        By default (None), the reconstructed size will be the dimension of the horizontal detector.</span>
+<span class="sd">    iterations : int, optional</span>
+<span class="sd">        The number of SIRT iterations.</span>
+<span class="sd">    nonnegativity : bool, optional</span>
+<span class="sd">        Impose nonnegativity constraint on reconstructed image.</span>
+<span class="sd">    neglog: bool</span>
+<span class="sd">        Take negative logarithm on input data to convert to attenuation coefficient or a density of the scanned object. Defaults to False,</span>
+<span class="sd">        assuming that the negative log is taken either in normalisation procedure on with Paganin filter application.</span>
+<span class="sd">    gpu_id : int, optional</span>
+<span class="sd">        A GPU device index to perform operation on.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cp.ndarray</span>
+<span class="sd">        The SIRT reconstructed volume as a CuPy array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">RecToolsCP</span> <span class="o">=</span> <span class="n">_instantiate_iterative_recon_class</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">,</span>
+        <span class="n">angles</span><span class="p">,</span>
+        <span class="n">center</span><span class="p">,</span>
+        <span class="n">recon_size</span><span class="p">,</span>
+        <span class="n">gpu_id</span><span class="p">,</span>
+        <span class="n">datafidelity</span><span class="o">=</span><span class="s2">&quot;LS&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">_data_</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;projection_norm_data&quot;</span><span class="p">:</span> <span class="n">_take_neg_log</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">neglog</span> <span class="k">else</span> <span class="n">data</span><span class="p">,</span>
+        <span class="s2">&quot;data_axes_labels_order&quot;</span><span class="p">:</span> <span class="n">input_data_axis_labels</span><span class="p">,</span>
+    <span class="p">}</span>  <span class="c1"># data dictionary</span>
+    <span class="n">_algorithm_</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;iterations&quot;</span><span class="p">:</span> <span class="n">iterations</span><span class="p">,</span>
+        <span class="s2">&quot;nonnegativity&quot;</span><span class="p">:</span> <span class="n">nonnegativity</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">reconstruction</span> <span class="o">=</span> <span class="n">RecToolsCP</span><span class="o">.</span><span class="n">SIRT</span><span class="p">(</span><span class="n">_data_</span><span class="p">,</span> <span class="n">_algorithm_</span><span class="p">)</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">_default_memory_pool</span><span class="o">.</span><span class="n">free_all_blocks</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">reconstruction</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">requirements</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="c1">## %%%%%%%%%%%%%%%%%%%%%%% CGLS reconstruction %%%%%%%%%%%%%%%%%%%%%%%%%%%%  ##</span>
+<div class="viewcode-block" id="CGLS">
+<a class="viewcode-back" href="../../../api/httomolibgpu.recon.algorithm.html#httomolibgpu.recon.algorithm.CGLS">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">CGLS</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">recon_size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">iterations</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">nonnegativity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">neglog</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">gpu_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform Conjugate Gradient Least Squares (CGLS) using ASTRA toolbox :cite:`van2016fast` and</span>
+<span class="sd">    ToMoBAR :cite:`kazantsev2020tomographic` wrappers.</span>
+<span class="sd">    This is 3D recon directly from a CuPy array while using ASTRA GPUlink capability to avoid host-device</span>
+<span class="sd">    transactions for projection and backprojection.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : cp.ndarray</span>
+<span class="sd">        Projection data as a CuPy array.</span>
+<span class="sd">    angles : np.ndarray</span>
+<span class="sd">        An array of angles given in radians.</span>
+<span class="sd">    center : float, optional</span>
+<span class="sd">        The center of rotation (CoR).</span>
+<span class="sd">    recon_size : int, optional</span>
+<span class="sd">        The [recon_size, recon_size] shape of the reconstructed slice in pixels.</span>
+<span class="sd">        By default (None), the reconstructed size will be the dimension of the horizontal detector.</span>
+<span class="sd">    iterations : int, optional</span>
+<span class="sd">        The number of CGLS iterations.</span>
+<span class="sd">    nonnegativity : bool, optional</span>
+<span class="sd">        Impose nonnegativity constraint on reconstructed image.</span>
+<span class="sd">    neglog: bool</span>
+<span class="sd">        Take negative logarithm on input data to convert to attenuation coefficient or a density of the scanned object. Defaults to False,</span>
+<span class="sd">        assuming that the negative log is taken either in normalisation procedure on with Paganin filter application.</span>
+<span class="sd">    gpu_id : int, optional</span>
+<span class="sd">        A GPU device index to perform operation on.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cp.ndarray</span>
+<span class="sd">        The CGLS reconstructed volume as a CuPy array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">RecToolsCP</span> <span class="o">=</span> <span class="n">_instantiate_iterative_recon_class</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">recon_size</span><span class="p">,</span> <span class="n">gpu_id</span><span class="p">,</span> <span class="n">datafidelity</span><span class="o">=</span><span class="s2">&quot;LS&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">_data_</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;projection_norm_data&quot;</span><span class="p">:</span> <span class="n">_take_neg_log</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">neglog</span> <span class="k">else</span> <span class="n">data</span><span class="p">,</span>
+        <span class="s2">&quot;data_axes_labels_order&quot;</span><span class="p">:</span> <span class="n">input_data_axis_labels</span><span class="p">,</span>
+    <span class="p">}</span>  <span class="c1"># data dictionary</span>
+    <span class="n">_algorithm_</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;iterations&quot;</span><span class="p">:</span> <span class="n">iterations</span><span class="p">,</span> <span class="s2">&quot;nonnegativity&quot;</span><span class="p">:</span> <span class="n">nonnegativity</span><span class="p">}</span>
+    <span class="n">reconstruction</span> <span class="o">=</span> <span class="n">RecToolsCP</span><span class="o">.</span><span class="n">CGLS</span><span class="p">(</span><span class="n">_data_</span><span class="p">,</span> <span class="n">_algorithm_</span><span class="p">)</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">_default_memory_pool</span><span class="o">.</span><span class="n">free_all_blocks</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">reconstruction</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">requirements</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="c1">## %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ##</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_instantiate_direct_recon_class</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">recon_size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">gpu_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;instantiate ToMoBAR&#39;s direct recon class</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (cp.ndarray): data array</span>
+<span class="sd">        angles (np.ndarray): angles</span>
+<span class="sd">        center (Optional[float], optional): center of recon. Defaults to None.</span>
+<span class="sd">        recon_size (Optional[int], optional): recon_size. Defaults to None.</span>
+<span class="sd">        gpu_id (int, optional): gpu ID. Defaults to 0.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Type[RecToolsDIRCuPy]: an instance of the direct recon class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">center</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># making a crude guess</span>
+    <span class="k">if</span> <span class="n">recon_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">recon_size</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">RecToolsCP</span> <span class="o">=</span> <span class="n">RecToolsDIRCuPy</span><span class="p">(</span>
+        <span class="n">DetectorsDimH</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>  <span class="c1"># Horizontal detector dimension</span>
+        <span class="n">DetectorsDimV</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># Vertical detector dimension (3D case)</span>
+        <span class="n">CenterRotOffset</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="o">-</span> <span class="n">center</span>
+        <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># Center of Rotation scalar or a vector</span>
+        <span class="n">AnglesVec</span><span class="o">=-</span><span class="n">angles</span><span class="p">,</span>  <span class="c1"># A vector of projection angles in radians</span>
+        <span class="n">ObjSize</span><span class="o">=</span><span class="n">recon_size</span><span class="p">,</span>  <span class="c1"># Reconstructed object dimensions (scalar)</span>
+        <span class="n">device_projector</span><span class="o">=</span><span class="n">gpu_id</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">RecToolsCP</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_instantiate_iterative_recon_class</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">recon_size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">gpu_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">datafidelity</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;LS&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;instantiate ToMoBAR&#39;s iterative recon class</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (cp.ndarray): data array</span>
+<span class="sd">        angles (np.ndarray): angles</span>
+<span class="sd">        center (Optional[float], optional): center of recon. Defaults to None.</span>
+<span class="sd">        recon_size (Optional[int], optional): recon_size. Defaults to None.</span>
+<span class="sd">        datafidelity (str, optional): Data fidelity</span>
+<span class="sd">        gpu_id (int, optional): gpu ID. Defaults to 0.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Type[RecToolsIRCuPy]: an instance of the iterative class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">center</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># making a crude guess</span>
+    <span class="k">if</span> <span class="n">recon_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">recon_size</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">RecToolsCP</span> <span class="o">=</span> <span class="n">RecToolsIRCuPy</span><span class="p">(</span>
+        <span class="n">DetectorsDimH</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>  <span class="c1"># Horizontal detector dimension</span>
+        <span class="n">DetectorsDimV</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># Vertical detector dimension (3D case)</span>
+        <span class="n">CenterRotOffset</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="o">-</span> <span class="n">center</span>
+        <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># Center of Rotation scalar or a vector</span>
+        <span class="n">AnglesVec</span><span class="o">=-</span><span class="n">angles</span><span class="p">,</span>  <span class="c1"># A vector of projection angles in radians</span>
+        <span class="n">ObjSize</span><span class="o">=</span><span class="n">recon_size</span><span class="p">,</span>  <span class="c1"># Reconstructed object dimensions (scalar)</span>
+        <span class="n">datafidelity</span><span class="o">=</span><span class="n">datafidelity</span><span class="p">,</span>
+        <span class="n">device_projector</span><span class="o">=</span><span class="n">gpu_id</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">RecToolsCP</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_take_neg_log</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Taking negative log&quot;&quot;&quot;</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="o">-</span><span class="n">cp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">6.0</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Imaging Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Diamond Light Source.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Mar 10, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

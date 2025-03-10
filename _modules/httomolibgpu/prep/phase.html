@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>httomolibgpu.prep.phase &#8212; HTTomolibgpu Documentation page</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=de0cdcf2"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/httomolibgpu/prep/phase';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Mar 10, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">HTTomolibgpu Documentation page</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/about.html">HTTomolibGPU</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/methods.html">Methods Description</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/median_filter.html">Median filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/outlier_removal.html">Outliers removal filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/total_variation_ROF.html">Total Variation denoising (ROF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/total_variation_PD.html">Total Variation denoising (PD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_stripe_based_sorting.html">Remove stripes by sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_all_stripe.html">Remove stripes combo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_stripe_ti.html">Remove stripes Titarenko</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/raven_filter.html">Raven filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/rescale_to_int.html">Rescale to integers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/api.html">API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.corr.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.corr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.denoise.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.denoise</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.morph.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.morph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.rescale.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.rescale</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.alignment.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.normalize.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.normalize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.phase.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.phase</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.stripe.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.stripe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.recon.algorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.algorithm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.recon.rotation.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.rotation</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography/biblio.html">Bibliography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/pipeline1_FBP.html">Example 1 (FBP and Fourier)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/pipeline2_iterative.html">Example 2 (Iterative Rec)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/DistortionCorr.html">Example 3 (Distortion corr)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for httomolibgpu.prep.phase</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Copyright 2022 Diamond Light Source Ltd.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Created By  : Tomography Team at DLS &lt;scientificsoftware@diamond.ac.uk&gt;</span>
+<span class="c1"># Created Date: 01 November 2022</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="sd">&quot;&quot;&quot;Modules for phase retrieval and phase-contrast enhancement&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">httomolibgpu</span><span class="w"> </span><span class="kn">import</span> <span class="n">cupywrapper</span>
+
+<span class="n">cp</span> <span class="o">=</span> <span class="n">cupywrapper</span><span class="o">.</span><span class="n">cp</span>
+<span class="n">cupy_run</span> <span class="o">=</span> <span class="n">cupywrapper</span><span class="o">.</span><span class="n">cupy_run</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mock</span>
+
+<span class="k">if</span> <span class="n">cupy_run</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">httomolibgpu.cuda_kernels</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_cuda_module</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">cupyx.scipy.fft</span><span class="w"> </span><span class="kn">import</span> <span class="n">fft2</span><span class="p">,</span> <span class="n">ifft2</span><span class="p">,</span> <span class="n">fftshift</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">load_cuda_module</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">fft2</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">ifft2</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">fftshift</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">float32</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;paganin_filter_savu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;paganin_filter_tomopy&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="c1">## %%%%%%%%%%%%%%%%%%%%%%% paganin_filter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ##</span>
+<span class="c1">#: CuPy implementation of Paganin filter from Savu</span>
+<div class="viewcode-block" id="paganin_filter_savu">
+<a class="viewcode-back" href="../../../api/httomolibgpu.prep.phase.html#httomolibgpu.prep.phase.paganin_filter_savu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">paganin_filter_savu</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">ratio</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">250.0</span><span class="p">,</span>
+    <span class="n">energy</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">53.0</span><span class="p">,</span>
+    <span class="n">distance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.28</span><span class="p">,</span>
+    <span class="n">pad_y</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">pad_x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">pad_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;edge&quot;</span><span class="p">,</span>
+    <span class="n">increment</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply Paganin filter (for denoising or contrast enhancement) to</span>
+<span class="sd">    projections.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : cp.ndarray</span>
+<span class="sd">        The stack of projections to filter.</span>
+
+<span class="sd">    ratio : float, optional</span>
+<span class="sd">        Ratio of delta/beta.</span>
+
+<span class="sd">    energy : float, optional</span>
+<span class="sd">        Beam energy in keV.</span>
+
+<span class="sd">    distance : float, optional</span>
+<span class="sd">        Distance from sample to detector in metres.</span>
+
+<span class="sd">    resolution : float, optional</span>
+<span class="sd">        Pixel size in microns.</span>
+
+<span class="sd">    pad_y : int, optional</span>
+<span class="sd">        Pad the top and bottom of projections.</span>
+
+<span class="sd">    pad_x : int, optional</span>
+<span class="sd">        Pad the left and right of projections.</span>
+
+<span class="sd">    pad_method : str, optional</span>
+<span class="sd">        Numpy pad method to use.</span>
+
+<span class="sd">    increment : float, optional</span>
+<span class="sd">        Increment all values by this amount before taking the log.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cp.ndarray</span>
+<span class="sd">        The stack of filtered projections.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check the input data is valid</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Invalid number of dimensions in data: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s2">,&quot;</span>
+            <span class="s2">&quot; please provide a stack of 2D projections.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Setup various values for the filter</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">micron</span> <span class="o">=</span> <span class="mf">1e-6</span>
+    <span class="n">keV</span> <span class="o">=</span> <span class="mf">1000.0</span>
+    <span class="n">energy</span> <span class="o">*=</span> <span class="n">keV</span>
+    <span class="n">resolution</span> <span class="o">*=</span> <span class="n">micron</span>
+    <span class="n">wavelength</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1240.0</span> <span class="o">/</span> <span class="n">energy</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-9</span>
+
+    <span class="n">height1</span> <span class="o">=</span> <span class="n">height</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pad_y</span>
+    <span class="n">width1</span> <span class="o">=</span> <span class="n">width</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pad_x</span>
+
+    <span class="c1"># Define the paganin filter, taking into account the padding that will be</span>
+    <span class="c1"># applied to the projections (if any)</span>
+
+    <span class="c1"># Using raw kernel her as indexing is direct and it avoids a lot of temporaries</span>
+    <span class="c1"># and tiny kernels</span>
+    <span class="n">module</span> <span class="o">=</span> <span class="n">load_cuda_module</span><span class="p">(</span><span class="s2">&quot;paganin_filter_gen&quot;</span><span class="p">)</span>
+    <span class="n">kernel</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s2">&quot;paganin_filter_gen&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Apply padding to all the 2D projections</span>
+    <span class="c1"># Note: this takes considerable time on GPU...</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">pad_y</span><span class="p">,</span> <span class="n">pad_y</span><span class="p">),</span> <span class="p">(</span><span class="n">pad_x</span><span class="p">,</span> <span class="n">pad_x</span><span class="p">)),</span> <span class="n">mode</span><span class="o">=</span><span class="n">pad_method</span><span class="p">)</span>
+
+    <span class="n">precond_kernel_float</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ElementwiseKernel</span><span class="p">(</span>
+        <span class="s2">&quot;T data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;T out&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        if (isnan(data)) {</span>
+<span class="sd">            out = T(0);</span>
+<span class="sd">        } else if (isinf(data)) {</span>
+<span class="sd">            out = data &lt; 0.0 ? -3.402823e38f : 3.402823e38f;  // FLT_MAX, not available in cupy</span>
+<span class="sd">        } else if (data == 0.0) {</span>
+<span class="sd">            out = 1.0;</span>
+<span class="sd">        } else {</span>
+<span class="sd">            out = data;</span>
+<span class="sd">        }</span>
+<span class="sd">        &quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;paganin_precond_float&quot;</span><span class="p">,</span>
+        <span class="n">no_return</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">precond_kernel_int</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ElementwiseKernel</span><span class="p">(</span>
+        <span class="s2">&quot;T data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;T out&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;out = data == 0 ? 1 : data&quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;paganin_precond_int&quot;</span><span class="p">,</span>
+        <span class="n">no_return</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">cp</span><span class="o">.</span><span class="n">float64</span><span class="p">):</span>
+        <span class="n">precond_kernel_float</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">precond_kernel_int</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># avoid normalising in both directions - we include multiplier in the post_kernel</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">fft2</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">overwrite_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s2">&quot;backward&quot;</span><span class="p">)</span>
+
+    <span class="c1"># prepare filter here, while the GPU is busy with the FFT</span>
+    <span class="n">filtercomplex</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">height1</span><span class="p">,</span> <span class="n">width1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span>
+    <span class="n">bx</span> <span class="o">=</span> <span class="mi">16</span>
+    <span class="n">by</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">gx</span> <span class="o">=</span> <span class="p">(</span><span class="n">width1</span> <span class="o">+</span> <span class="n">bx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">bx</span>
+    <span class="n">gy</span> <span class="o">=</span> <span class="p">(</span><span class="n">height1</span> <span class="o">+</span> <span class="n">by</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">by</span>
+    <span class="n">kernel</span><span class="p">(</span>
+        <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span> <span class="n">gy</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">block</span><span class="o">=</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">args</span><span class="o">=</span><span class="p">(</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">width1</span><span class="p">),</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">height1</span><span class="p">),</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">resolution</span><span class="p">),</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">wavelength</span><span class="p">),</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">distance</span><span class="p">),</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">ratio</span><span class="p">),</span>
+            <span class="n">filtercomplex</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">data</span> <span class="o">*=</span> <span class="n">filtercomplex</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">ifft2</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">overwrite_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s2">&quot;forward&quot;</span><span class="p">)</span>
+
+    <span class="n">post_kernel</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ElementwiseKernel</span><span class="p">(</span>
+        <span class="s2">&quot;C pci1, raw float32 increment, raw float32 ratio, raw float32 fft_scale&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;T out&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;out = -0.5 * ratio * log(abs(pci1) * fft_scale + increment)&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;paganin_post_proc&quot;</span><span class="p">,</span>
+        <span class="n">no_return</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fft_scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">post_kernel</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">[:,</span> <span class="n">pad_y</span> <span class="p">:</span> <span class="n">pad_y</span> <span class="o">+</span> <span class="n">height</span><span class="p">,</span> <span class="n">pad_x</span> <span class="p">:</span> <span class="n">pad_x</span> <span class="o">+</span> <span class="n">width</span><span class="p">],</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">increment</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">ratio</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">fft_scale</span><span class="p">),</span>
+        <span class="n">res</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_wavelength</span><span class="p">(</span><span class="n">energy</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">SPEED_OF_LIGHT</span> <span class="o">=</span> <span class="mf">299792458e2</span>  <span class="c1"># [cm/s]</span>
+    <span class="n">PLANCK_CONSTANT</span> <span class="o">=</span> <span class="mf">6.58211928e-19</span>  <span class="c1"># [keV*s]</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">PLANCK_CONSTANT</span> <span class="o">*</span> <span class="n">SPEED_OF_LIGHT</span> <span class="o">/</span> <span class="n">energy</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_reciprocal_grid</span><span class="p">(</span><span class="n">pixel_size</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">shape_proj</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate reciprocal grid.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pixel_size : float</span>
+<span class="sd">        Detector pixel size in cm.</span>
+<span class="sd">    shape_proj : tuple</span>
+<span class="sd">        Shape of the reciprocal grid along x and y axes.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Grid coordinates.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Sampling in reciprocal space.</span>
+    <span class="n">indx</span> <span class="o">=</span> <span class="n">_reciprocal_coord</span><span class="p">(</span><span class="n">pixel_size</span><span class="p">,</span> <span class="n">shape_proj</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">indy</span> <span class="o">=</span> <span class="n">_reciprocal_coord</span><span class="p">(</span><span class="n">pixel_size</span><span class="p">,</span> <span class="n">shape_proj</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">indx_sq</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">indx</span><span class="p">)</span>
+    <span class="n">indy_sq</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">indy</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">indx_sq</span><span class="p">,</span> <span class="n">indy_sq</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_reciprocal_coord</span><span class="p">(</span><span class="n">pixel_size</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_grid</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate reciprocal grid coordinates for a given pixel size</span>
+<span class="sd">    and discretization.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pixel_size : float</span>
+<span class="sd">        Detector pixel size in cm.</span>
+<span class="sd">    num_grid : int</span>
+<span class="sd">        Size of the reciprocal grid.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Grid coordinates.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">num_grid</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="n">num_grid</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">rc</span> <span class="o">*=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">pixel_size</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rc</span>
+
+
+<span class="c1">##-------------------------------------------------------------##</span>
+<span class="c1">##-------------------------------------------------------------##</span>
+<span class="c1"># Adaptation of retrieve_phase (Paganin filter) from TomoPy</span>
+<div class="viewcode-block" id="paganin_filter_tomopy">
+<a class="viewcode-back" href="../../../api/httomolibgpu.prep.phase.html#httomolibgpu.prep.phase.paganin_filter_tomopy">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">paganin_filter_tomopy</span><span class="p">(</span>
+    <span class="n">tomo</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">pixel_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-4</span><span class="p">,</span>
+    <span class="n">dist</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">50.0</span><span class="p">,</span>
+    <span class="n">energy</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">53.0</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform single-material phase retrieval from flats/darks corrected tomographic measurements. See</span>
+<span class="sd">    :cite:`Paganin02` for a reference.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tomo : cp.ndarray</span>
+<span class="sd">        3D array of f/d corrected tomographic projections.</span>
+<span class="sd">    pixel_size : float, optional</span>
+<span class="sd">        Detector pixel size in cm.</span>
+<span class="sd">    dist : float, optional</span>
+<span class="sd">        Propagation distance of the wavefront in cm.</span>
+<span class="sd">    energy : float, optional</span>
+<span class="sd">        Energy of incident wave in keV.</span>
+<span class="sd">    alpha : float, optional</span>
+<span class="sd">        Regularization parameter, the ratio of delta/beta. Larger values lead to more smoothing.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cp.ndarray</span>
+<span class="sd">        The 3D array of Paganin phase-filtered projection images.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check the input data is valid</span>
+    <span class="k">if</span> <span class="n">tomo</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Invalid number of dimensions in data: </span><span class="si">{</span><span class="n">tomo</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s2">,&quot;</span>
+            <span class="s2">&quot; please provide a stack of 2D projections.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">dz_orig</span><span class="p">,</span> <span class="n">dy_orig</span><span class="p">,</span> <span class="n">dx_orig</span> <span class="o">=</span> <span class="n">tomo</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="c1"># Perform padding to the power of 2 as FFT is O(n*log(n)) complexity</span>
+    <span class="c1"># TODO: adding other options of padding?</span>
+    <span class="n">padded_tomo</span><span class="p">,</span> <span class="n">pad_tup</span> <span class="o">=</span> <span class="n">_pad_projections_to_second_power</span><span class="p">(</span><span class="n">tomo</span><span class="p">)</span>
+
+    <span class="n">dz</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">padded_tomo</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="c1"># 3D FFT of tomo data</span>
+    <span class="n">padded_tomo</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">padded_tomo</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span>
+    <span class="n">fft_tomo</span> <span class="o">=</span> <span class="n">fft2</span><span class="p">(</span><span class="n">padded_tomo</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">overwrite_x</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Compute the reciprocal grid.</span>
+    <span class="n">w2</span> <span class="o">=</span> <span class="n">_reciprocal_grid</span><span class="p">(</span><span class="n">pixel_size</span><span class="p">,</span> <span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">dx</span><span class="p">))</span>
+
+    <span class="c1"># Build filter in the Fourier space.</span>
+    <span class="n">phase_filter</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="n">_paganin_filter_factor2</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">w2</span><span class="p">))</span>
+    <span class="n">phase_filter</span> <span class="o">=</span> <span class="n">phase_filter</span> <span class="o">/</span> <span class="n">phase_filter</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>  <span class="c1"># normalisation</span>
+
+    <span class="c1"># Filter projections</span>
+    <span class="n">fft_tomo</span> <span class="o">*=</span> <span class="n">phase_filter</span>
+
+    <span class="c1"># Apply filter and take inverse FFT</span>
+    <span class="n">ifft_filtered_tomo</span> <span class="o">=</span> <span class="n">ifft2</span><span class="p">(</span><span class="n">fft_tomo</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">overwrite_x</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">real</span>
+
+    <span class="c1"># slicing indices for cropping</span>
+    <span class="n">slc_indices</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">slice</span><span class="p">(</span><span class="n">pad_tup</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">pad_tup</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dz_orig</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="nb">slice</span><span class="p">(</span><span class="n">pad_tup</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">pad_tup</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dy_orig</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="nb">slice</span><span class="p">(</span><span class="n">pad_tup</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">pad_tup</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx_orig</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># crop the padded filtered data:</span>
+    <span class="n">tomo</span> <span class="o">=</span> <span class="n">ifft_filtered_tomo</span><span class="p">[</span><span class="n">slc_indices</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="c1"># taking the negative log</span>
+    <span class="n">_log_kernel</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ElementwiseKernel</span><span class="p">(</span>
+        <span class="s2">&quot;C tomo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;C out&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;out = -log(tomo)&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;log_kernel&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_log_kernel</span><span class="p">(</span><span class="n">tomo</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_shift_bit_length</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_calculate_pad_size</span><span class="p">(</span><span class="n">datashape</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculating the padding size</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        datashape (tuple): the shape of the 3D data</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: the padded dimensions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pad_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">datashape</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">pad_width</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># do not pad the slicing dim</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">_shift_bit_length</span><span class="p">(</span><span class="n">element</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">element</span>
+            <span class="k">if</span> <span class="n">element</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">pad_width_scalar</span> <span class="o">=</span> <span class="n">diff</span> <span class="o">//</span> <span class="mi">2</span>
+                <span class="n">pad_width</span> <span class="o">=</span> <span class="p">(</span><span class="n">pad_width_scalar</span><span class="p">,</span> <span class="n">pad_width_scalar</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># need an uneven padding for odd-number lengths</span>
+                <span class="n">left_pad</span> <span class="o">=</span> <span class="n">diff</span> <span class="o">//</span> <span class="mi">2</span>
+                <span class="n">right_pad</span> <span class="o">=</span> <span class="n">diff</span> <span class="o">-</span> <span class="n">left_pad</span>
+                <span class="n">pad_width</span> <span class="o">=</span> <span class="p">(</span><span class="n">left_pad</span><span class="p">,</span> <span class="n">right_pad</span><span class="p">)</span>
+
+        <span class="n">pad_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pad_width</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pad_list</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_pad_projections_to_second_power</span><span class="p">(</span>
+    <span class="n">tomo</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Performs padding of each projection to the next power of 2.</span>
+<span class="sd">    If the shape is not even we also care of that before padding.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tomo : cp.ndarray</span>
+<span class="sd">        3d projection data</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Tuple consisting of:</span>
+<span class="sd">    ndarray: padded 3d projection data</span>
+<span class="sd">    tuple: a tuple with padding dimensions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">full_shape_tomo</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">tomo</span><span class="p">)</span>
+
+    <span class="n">pad_list</span> <span class="o">=</span> <span class="n">_calculate_pad_size</span><span class="p">(</span><span class="n">full_shape_tomo</span><span class="p">)</span>
+
+    <span class="n">padded_tomo</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">tomo</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">pad_list</span><span class="p">),</span> <span class="s2">&quot;edge&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">padded_tomo</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">pad_list</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_paganin_filter_factor2</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">w2</span><span class="p">):</span>
+    <span class="c1"># Alpha represents the ratio of delta/beta.</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">_wavelength</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span> <span class="o">*</span> <span class="n">dist</span> <span class="o">*</span> <span class="n">w2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Imaging Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Diamond Light Source.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Mar 10, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>httomolibgpu.prep.stripe &#8212; HTTomolibgpu Documentation page</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=de0cdcf2"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/httomolibgpu/prep/stripe';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Mar 10, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">HTTomolibgpu Documentation page</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/about.html">HTTomolibGPU</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/methods.html">Methods Description</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/median_filter.html">Median filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/outlier_removal.html">Outliers removal filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/total_variation_ROF.html">Total Variation denoising (ROF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/total_variation_PD.html">Total Variation denoising (PD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_stripe_based_sorting.html">Remove stripes by sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_all_stripe.html">Remove stripes combo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_stripe_ti.html">Remove stripes Titarenko</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/raven_filter.html">Raven filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/rescale_to_int.html">Rescale to integers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/api.html">API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.corr.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.corr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.denoise.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.denoise</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.morph.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.morph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.rescale.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.rescale</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.alignment.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.normalize.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.normalize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.phase.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.phase</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.stripe.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.stripe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.recon.algorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.algorithm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.recon.rotation.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.rotation</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography/biblio.html">Bibliography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/pipeline1_FBP.html">Example 1 (FBP and Fourier)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/pipeline2_iterative.html">Example 2 (Iterative Rec)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/DistortionCorr.html">Example 3 (Distortion corr)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for httomolibgpu.prep.stripe</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Copyright 2022 Diamond Light Source Ltd.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Created By  : Tomography Team at DLS &lt;scientificsoftware@diamond.ac.uk&gt;</span>
+<span class="c1"># Created Date: 01 November 2022</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="sd">&quot;&quot;&quot;Module for stripes removal&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">httomolibgpu</span><span class="w"> </span><span class="kn">import</span> <span class="n">cupywrapper</span>
+
+<span class="n">cp</span> <span class="o">=</span> <span class="n">cupywrapper</span><span class="o">.</span><span class="n">cp</span>
+<span class="n">cupy_run</span> <span class="o">=</span> <span class="n">cupywrapper</span><span class="o">.</span><span class="n">cupy_run</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mock</span>
+
+<span class="k">if</span> <span class="n">cupy_run</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">cupyx.scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">median_filter</span><span class="p">,</span> <span class="n">binary_dilation</span><span class="p">,</span> <span class="n">uniform_filter1d</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">cupyx.scipy.fft</span><span class="w"> </span><span class="kn">import</span> <span class="n">fft2</span><span class="p">,</span> <span class="n">ifft2</span><span class="p">,</span> <span class="n">fftshift</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">httomolibgpu.cuda_kernels</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_cuda_module</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">median_filter</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">binary_dilation</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">uniform_filter1d</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">fft2</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">ifft2</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">fftshift</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;remove_stripe_based_sorting&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;remove_stripe_ti&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;remove_all_stripe&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;raven_filter&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="remove_stripe_based_sorting">
+<a class="viewcode-back" href="../../../api/httomolibgpu.prep.stripe.html#httomolibgpu.prep.stripe.remove_stripe_based_sorting">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_stripe_based_sorting</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
+    <span class="n">size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="n">dim</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove full and partial stripe artifacts from sinogram using Nghia Vo&#39;s</span>
+<span class="sd">    approach, see :ref:`method_remove_stripe_based_sorting` and :cite:`vo2018superior`. This algorithm works particularly</span>
+<span class="sd">    well for removing partial stripes.</span>
+
+<span class="sd">    Steps of the algorithm: 1. Sort each column of the sinogram by its grayscale values.</span>
+<span class="sd">    2. Apply a smoothing (median) filter on the sorted image along each row. 3. Re-sort the smoothed image columns to the original rows to</span>
+<span class="sd">    get the corrected sinogram.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : ndarray</span>
+<span class="sd">        3D tomographic data as a CuPy or NumPy array.</span>
+<span class="sd">    size : int, optional</span>
+<span class="sd">        Window size of the median filter.</span>
+<span class="sd">    dim : {1, 2}, optional</span>
+<span class="sd">        Dimension of the window.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Corrected 3D tomographic data as a CuPy or NumPy array.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">:</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="mi">21</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.01</span> <span class="o">*</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">data</span><span class="p">[:,</span> <span class="n">m</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">_rs_sort</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="n">m</span><span class="p">,</span> <span class="p">:],</span> <span class="n">size</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_rs_sort</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove stripes using the sorting technique.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sinogram</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">sinogram</span><span class="p">)</span>
+
+    <span class="c1">#: Sort each column of the sinogram by its grayscale values</span>
+    <span class="c1">#: Keep track of the sorting indices so we can reverse it below</span>
+    <span class="n">sortvals</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sortvals_reverse</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">sortvals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sino_sort</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">take_along_axis</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">sortvals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1">#: Now apply the median filter on the sorted image along each row</span>
+    <span class="n">sino_sort</span> <span class="o">=</span> <span class="n">median_filter</span><span class="p">(</span><span class="n">sino_sort</span><span class="p">,</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">dim</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
+
+    <span class="c1">#: step 3: re-sort the smoothed image columns to the original rows</span>
+    <span class="n">sino_corrected</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">take_along_axis</span><span class="p">(</span><span class="n">sino_sort</span><span class="p">,</span> <span class="n">sortvals_reverse</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">sino_corrected</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="remove_stripe_ti">
+<a class="viewcode-back" href="../../../api/httomolibgpu.prep.stripe.html#httomolibgpu.prep.stripe.remove_stripe_ti">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_stripe_ti</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
+    <span class="n">beta</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Removes stripes with the method of V. Titarenko (TomoCuPy implementation).</span>
+<span class="sd">    See :ref:`method_remove_stripe_ti` and :cite:`titarenko2010analytical`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : ndarray</span>
+<span class="sd">        3D stack of projections as a CuPy array.</span>
+<span class="sd">    beta : float, optional</span>
+<span class="sd">        filter parameter, lower values increase the filter strength.</span>
+<span class="sd">        Default is 0.1.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        3D array of de-striped projections.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># TODO: detector dimensions must be even otherwise error</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span><span class="p">))</span> <span class="o">**</span> <span class="n">cp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">gamma</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">-</span> <span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">cp</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">gamma</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[:]</span> <span class="o">+=</span> <span class="n">v</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+
+<span class="c1">######## Optimized version for Vo-all ring removal in tomopy########</span>
+<span class="c1"># This function is taken from TomoCuPy package</span>
+<span class="c1"># *************************************************************************** #</span>
+<span class="c1">#                  Copyright © 2022, UChicago Argonne, LLC                    #</span>
+<span class="c1">#                           All Rights Reserved                               #</span>
+<span class="c1">#                         Software Name: Tomocupy                             #</span>
+<span class="c1">#                     By: Argonne National Laboratory                         #</span>
+<span class="c1">#                                                                             #</span>
+<span class="c1">#                           OPEN SOURCE LICENSE                               #</span>
+<span class="c1">#                                                                             #</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without          #</span>
+<span class="c1"># modification, are permitted provided that the following conditions are met: #</span>
+<span class="c1">#                                                                             #</span>
+<span class="c1"># 1. Redistributions of source code must retain the above copyright notice,   #</span>
+<span class="c1">#    this list of conditions and the following disclaimer.                    #</span>
+<span class="c1"># 2. Redistributions in binary form must reproduce the above copyright        #</span>
+<span class="c1">#    notice, this list of conditions and the following disclaimer in the      #</span>
+<span class="c1">#    documentation and/or other materials provided with the distribution.     #</span>
+<span class="c1"># 3. Neither the name of the copyright holder nor the names of its            #</span>
+<span class="c1">#    contributors may be used to endorse or promote products derived          #</span>
+<span class="c1">#    from this software without specific prior written permission.            #</span>
+<span class="c1">#                                                                             #</span>
+<span class="c1">#                                                                             #</span>
+<span class="c1"># *************************************************************************** #</span>
+<div class="viewcode-block" id="remove_all_stripe">
+<a class="viewcode-back" href="../../../api/httomolibgpu.prep.stripe.html#httomolibgpu.prep.stripe.remove_all_stripe">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_all_stripe</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">snr</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span>
+    <span class="n">la_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">61</span><span class="p">,</span>
+    <span class="n">sm_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">21</span><span class="p">,</span>
+    <span class="n">dim</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove all types of stripe artifacts from sinogram using Nghia Vo&#39;s</span>
+<span class="sd">    approach, see :ref:`method_remove_all_stripe` and :cite:`vo2018superior` (combination of algorithm 3,4,5, and 6).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : ndarray</span>
+<span class="sd">        3D tomographic data as a CuPy array.</span>
+<span class="sd">    snr  : float, optional</span>
+<span class="sd">        Ratio used to locate large stripes.</span>
+<span class="sd">        Greater is less sensitive.</span>
+<span class="sd">    la_size : int, optional</span>
+<span class="sd">        Window size of the median filter to remove large stripes.</span>
+<span class="sd">    sm_size : int, optional</span>
+<span class="sd">        Window size of the median filter to remove small-to-medium stripes.</span>
+<span class="sd">    dim : {1, 2}, optional</span>
+<span class="sd">        Dimension of the window.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Corrected 3D tomographic data as a CuPy or NumPy array.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">data</span><span class="p">[:,</span> <span class="n">m</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">_rs_dead</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="n">m</span><span class="p">,</span> <span class="p">:],</span> <span class="n">snr</span><span class="p">,</span> <span class="n">la_size</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[:,</span> <span class="n">m</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">_rs_sort</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="n">m</span><span class="p">,</span> <span class="p">:],</span> <span class="n">sm_size</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[:,</span> <span class="n">m</span><span class="p">,</span> <span class="p">:]</span>  <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="n">m</span><span class="p">,</span> <span class="p">:])</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_mpolyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x_mean</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y_mean</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="n">Sxy</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span> <span class="o">*</span> <span class="n">x_mean</span> <span class="o">*</span> <span class="n">y_mean</span>
+    <span class="n">Sxx</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span> <span class="o">*</span> <span class="n">x_mean</span> <span class="o">*</span> <span class="n">x_mean</span>
+
+    <span class="n">slope</span> <span class="o">=</span> <span class="n">Sxy</span> <span class="o">/</span> <span class="n">Sxx</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">y_mean</span> <span class="o">-</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">x_mean</span>
+    <span class="k">return</span> <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_detect_stripe</span><span class="p">(</span><span class="n">listdata</span><span class="p">,</span> <span class="n">snr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Algorithm 4 in :cite:`Vo:18`. Used to locate stripes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">numdata</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">listdata</span><span class="p">)</span>
+    <span class="n">listsorted</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">listdata</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">xlist</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numdata</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">ndrop</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">int16</span><span class="p">(</span><span class="mf">0.25</span> <span class="o">*</span> <span class="n">numdata</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">_slope</span><span class="p">,</span> <span class="n">_intercept</span><span class="p">)</span> <span class="o">=</span> <span class="n">_mpolyfit</span><span class="p">(</span>
+        <span class="n">xlist</span><span class="p">[</span><span class="n">ndrop</span> <span class="p">:</span> <span class="o">-</span><span class="n">ndrop</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">listsorted</span><span class="p">[</span><span class="n">ndrop</span> <span class="p">:</span> <span class="o">-</span><span class="n">ndrop</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">numt1</span> <span class="o">=</span> <span class="n">_intercept</span> <span class="o">+</span> <span class="n">_slope</span> <span class="o">*</span> <span class="n">xlist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">noiselevel</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">numt1</span> <span class="o">-</span> <span class="n">_intercept</span><span class="p">)</span>
+    <span class="n">noiselevel</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">noiselevel</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">val1</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">listsorted</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">_intercept</span><span class="p">)</span> <span class="o">/</span> <span class="n">noiselevel</span>
+    <span class="n">val2</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">listsorted</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">numt1</span><span class="p">)</span> <span class="o">/</span> <span class="n">noiselevel</span>
+    <span class="n">listmask</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">listdata</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">val1</span> <span class="o">&gt;=</span> <span class="n">snr</span><span class="p">:</span>
+        <span class="n">upper_thresh</span> <span class="o">=</span> <span class="n">_intercept</span> <span class="o">+</span> <span class="n">noiselevel</span> <span class="o">*</span> <span class="n">snr</span> <span class="o">*</span> <span class="mf">0.5</span>
+        <span class="n">listmask</span><span class="p">[</span><span class="n">listdata</span> <span class="o">&gt;</span> <span class="n">upper_thresh</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">if</span> <span class="n">val2</span> <span class="o">&gt;=</span> <span class="n">snr</span><span class="p">:</span>
+        <span class="n">lower_thresh</span> <span class="o">=</span> <span class="n">numt1</span> <span class="o">-</span> <span class="n">noiselevel</span> <span class="o">*</span> <span class="n">snr</span> <span class="o">*</span> <span class="mf">0.5</span>
+        <span class="n">listmask</span><span class="p">[</span><span class="n">listdata</span> <span class="o">&lt;=</span> <span class="n">lower_thresh</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">return</span> <span class="n">listmask</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_rs_large</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">snr</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">drop_ratio</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove large stripes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">drop_ratio</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">drop_ratio</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># = cp.clip(drop_ratio, 0.0, 0.8)</span>
+    <span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">)</span> <span class="o">=</span> <span class="n">sinogram</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">ndrop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">drop_ratio</span> <span class="o">*</span> <span class="n">nrow</span><span class="p">)</span>
+    <span class="n">sinosort</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sinosmooth</span> <span class="o">=</span> <span class="n">median_filter</span><span class="p">(</span><span class="n">sinosort</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
+    <span class="n">list1</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sinosort</span><span class="p">[</span><span class="n">ndrop</span> <span class="p">:</span> <span class="n">nrow</span> <span class="o">-</span> <span class="n">ndrop</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">list2</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sinosmooth</span><span class="p">[</span><span class="n">ndrop</span> <span class="p">:</span> <span class="n">nrow</span> <span class="o">-</span> <span class="n">ndrop</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">listfact</span> <span class="o">=</span> <span class="n">list1</span> <span class="o">/</span> <span class="n">list2</span>
+    <span class="c1"># Locate stripes</span>
+    <span class="n">listmask</span> <span class="o">=</span> <span class="n">_detect_stripe</span><span class="p">(</span><span class="n">listfact</span><span class="p">,</span> <span class="n">snr</span><span class="p">)</span>
+    <span class="n">listmask</span> <span class="o">=</span> <span class="n">binary_dilation</span><span class="p">(</span><span class="n">listmask</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">listmask</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="c1"># Normalize</span>
+    <span class="k">if</span> <span class="n">norm</span><span class="p">:</span>
+        <span class="n">sinogram</span> <span class="o">/=</span> <span class="n">cp</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">listfact</span><span class="p">,</span> <span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">sino_transposed</span> <span class="o">=</span> <span class="n">sinogram</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">ids_sort</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">sino_transposed</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Apply sorting without explicit matindex</span>
+    <span class="n">sino_sorted</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">take_along_axis</span><span class="p">(</span><span class="n">sino_transposed</span><span class="p">,</span> <span class="n">ids_sort</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Smoothen sorted sinogram</span>
+    <span class="n">sino_sorted</span><span class="p">[:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">sinosmooth</span><span class="p">)</span>
+
+    <span class="c1"># Restore original order</span>
+    <span class="n">ids_restore</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">ids_sort</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sino_corrected</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">take_along_axis</span><span class="p">(</span><span class="n">sino_sorted</span><span class="p">,</span> <span class="n">ids_restore</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="c1"># Apply corrections only to affected columns</span>
+    <span class="n">listxmiss</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">listmask</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">sinogram</span><span class="p">[:,</span> <span class="n">listxmiss</span><span class="p">]</span> <span class="o">=</span> <span class="n">sino_corrected</span><span class="p">[:,</span> <span class="n">listxmiss</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">sinogram</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_rs_dead</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">snr</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;remove unresponsive and fluctuating stripes&quot;&quot;&quot;</span>
+    <span class="n">sinogram</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">sinogram</span><span class="p">)</span>  <span class="c1"># Make it mutable</span>
+    <span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">sinogram</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">sinosmooth</span> <span class="o">=</span> <span class="n">uniform_filter1d</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">listdiff</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">sinogram</span> <span class="o">-</span> <span class="n">sinosmooth</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">listdiffbck</span> <span class="o">=</span> <span class="n">median_filter</span><span class="p">(</span><span class="n">listdiff</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+
+    <span class="n">listfact</span> <span class="o">=</span> <span class="n">listdiff</span> <span class="o">/</span> <span class="n">listdiffbck</span>
+
+    <span class="n">listmask</span> <span class="o">=</span> <span class="n">_detect_stripe</span><span class="p">(</span><span class="n">listfact</span><span class="p">,</span> <span class="n">snr</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">listfact</span>
+    <span class="n">listmask</span> <span class="o">=</span> <span class="n">binary_dilation</span><span class="p">(</span><span class="n">listmask</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">listmask</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">listmask</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">listmask</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">listx</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">listmask</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">listxmiss</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">listmask</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">listmask</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">listxmiss</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">listx</span><span class="p">,</span> <span class="n">listxmiss</span><span class="p">)</span>
+        <span class="n">weights</span> <span class="o">=</span> <span class="p">(</span><span class="n">listxmiss</span> <span class="o">-</span> <span class="n">listx</span><span class="p">[</span><span class="n">ids</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">listx</span><span class="p">[</span><span class="n">ids</span><span class="p">]</span> <span class="o">-</span> <span class="n">listx</span><span class="p">[</span><span class="n">ids</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">left_vals</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">listx</span><span class="p">[</span><span class="n">ids</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">right_vals</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">listx</span><span class="p">[</span><span class="n">ids</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">right_vals</span> <span class="o">-</span> <span class="n">left_vals</span>
+        <span class="n">diff</span> <span class="o">*=</span> <span class="n">weights</span>
+        <span class="n">sinogram</span><span class="p">[:,</span> <span class="n">listxmiss</span><span class="p">]</span> <span class="o">=</span> <span class="n">left_vals</span> <span class="o">+</span> <span class="n">diff</span>
+
+    <span class="c1"># Remove residual stripes</span>
+    <span class="k">if</span> <span class="n">norm</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">sinogram</span> <span class="o">=</span> <span class="n">_rs_large</span><span class="p">(</span><span class="n">sinogram</span><span class="p">,</span> <span class="n">snr</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sinogram</span>
+
+
+<div class="viewcode-block" id="raven_filter">
+<a class="viewcode-back" href="../../../api/httomolibgpu.prep.stripe.html#httomolibgpu.prep.stripe.raven_filter">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">raven_filter</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">pad_y</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">pad_x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">pad_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;edge&quot;</span><span class="p">,</span>
+    <span class="n">uvalue</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">nvalue</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">vvalue</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Applies FFT-based Raven filter :cite:`raven1998numerical` to a 3D CuPy array. For more detailed information, see :ref:`method_raven_filter`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : cp.ndarray</span>
+<span class="sd">        Input CuPy 3D array either float32 or uint16 data type.</span>
+
+<span class="sd">    pad_y : int, optional</span>
+<span class="sd">        Pad the top and bottom of projections.</span>
+
+<span class="sd">    pad_x : int, optional</span>
+<span class="sd">        Pad the left and right of projections.</span>
+
+<span class="sd">    pad_method : str, optional</span>
+<span class="sd">        Numpy pad method to use.</span>
+
+<span class="sd">    uvalue : int, optional</span>
+<span class="sd">        Cut-off frequency. To control the strength of filter, e.g., strong=10, moderate=20, weak=50.</span>
+
+<span class="sd">    nvalue : int, optional</span>
+<span class="sd">        The shape of filter.</span>
+
+<span class="sd">    vvalue : int, optional</span>
+<span class="sd">        Number of image-rows around the zero-frequency to be applied the filter.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cp.ndarray</span>
+<span class="sd">        Raven filtered 3D CuPy array in float32 data type.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the input array is not three dimensional.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The input data should be float32 data type&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Padding of the sinogram</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">((</span><span class="n">pad_y</span><span class="p">,</span> <span class="n">pad_y</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">pad_x</span><span class="p">,</span> <span class="n">pad_x</span><span class="p">)),</span> <span class="n">mode</span><span class="o">=</span><span class="n">pad_method</span><span class="p">)</span>
+
+    <span class="c1"># FFT and shift of sinogram</span>
+    <span class="n">fft_data</span> <span class="o">=</span> <span class="n">fft2</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">overwrite_x</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fft_data_shifted</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="n">fft_data</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="c1"># Calculation type</span>
+    <span class="n">calc_type</span> <span class="o">=</span> <span class="n">fft_data_shifted</span><span class="o">.</span><span class="n">dtype</span>
+
+    <span class="c1"># Setup various values for the filter</span>
+    <span class="n">height</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="c1"># Set the input type of the kernel</span>
+    <span class="n">kernel_args</span> <span class="o">=</span> <span class="s2">&quot;raven_filter&lt;</span><span class="si">{0}</span><span class="s2">&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="s2">&quot;float&quot;</span> <span class="k">if</span> <span class="n">calc_type</span> <span class="o">==</span> <span class="s2">&quot;complex64&quot;</span> <span class="k">else</span> <span class="s2">&quot;double&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># setting grid/block parameters</span>
+    <span class="n">block_x</span> <span class="o">=</span> <span class="mi">128</span>
+    <span class="n">block_dims</span> <span class="o">=</span> <span class="p">(</span><span class="n">block_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="n">block_x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">block_x</span>
+    <span class="n">grid_y</span> <span class="o">=</span> <span class="n">images</span>
+    <span class="n">grid_z</span> <span class="o">=</span> <span class="n">height</span>
+    <span class="n">grid_dims</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid_x</span><span class="p">,</span> <span class="n">grid_y</span><span class="p">,</span> <span class="n">grid_z</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="n">fft_data_shifted</span><span class="p">,</span> <span class="n">fft_data</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">uvalue</span><span class="p">,</span> <span class="n">nvalue</span><span class="p">,</span> <span class="n">vvalue</span><span class="p">)</span>
+
+    <span class="n">raven_module</span> <span class="o">=</span> <span class="n">load_cuda_module</span><span class="p">(</span><span class="s2">&quot;raven_filter&quot;</span><span class="p">,</span> <span class="n">name_expressions</span><span class="o">=</span><span class="p">[</span><span class="n">kernel_args</span><span class="p">])</span>
+    <span class="n">raven_filt</span> <span class="o">=</span> <span class="n">raven_module</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="n">kernel_args</span><span class="p">)</span>
+
+    <span class="n">raven_filt</span><span class="p">(</span><span class="n">grid_dims</span><span class="p">,</span> <span class="n">block_dims</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">fft_data_shifted</span>
+
+    <span class="c1"># raven_filt already doing ifftshifting</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">ifft2</span><span class="p">(</span><span class="n">fft_data</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">overwrite_x</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Removing padding</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">pad_y</span> <span class="p">:</span> <span class="n">height</span> <span class="o">-</span> <span class="n">pad_y</span><span class="p">,</span> <span class="p">:,</span> <span class="n">pad_x</span> <span class="p">:</span> <span class="n">width</span> <span class="o">-</span> <span class="n">pad_x</span><span class="p">]</span><span class="o">.</span><span class="n">real</span>
+
+    <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">requirements</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Imaging Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Diamond Light Source.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Mar 10, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

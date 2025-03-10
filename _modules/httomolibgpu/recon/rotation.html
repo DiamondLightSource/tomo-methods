@@ -1,0 +1,1161 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>httomolibgpu.recon.rotation &#8212; HTTomolibgpu Documentation page</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=de0cdcf2"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/httomolibgpu/recon/rotation';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Mar 10, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">HTTomolibgpu Documentation page</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/about.html">HTTomolibGPU</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/methods.html">Methods Description</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/median_filter.html">Median filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/outlier_removal.html">Outliers removal filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/total_variation_ROF.html">Total Variation denoising (ROF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/total_variation_PD.html">Total Variation denoising (PD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_stripe_based_sorting.html">Remove stripes by sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_all_stripe.html">Remove stripes combo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/remove_stripe_ti.html">Remove stripes Titarenko</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/raven_filter.html">Raven filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/methods_list/rescale_to_int.html">Rescale to integers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/api.html">API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.corr.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.corr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.denoise.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.denoise</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.morph.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.morph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.misc.rescale.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.misc.rescale</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.alignment.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.normalize.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.normalize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.phase.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.phase</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.prep.stripe.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.prep.stripe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.recon.algorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.algorithm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/httomolibgpu.recon.rotation.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">httomolibgpu.recon.rotation</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography/biblio.html">Bibliography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/pipeline1_FBP.html">Example 1 (FBP and Fourier)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/pipeline2_iterative.html">Example 2 (Iterative Rec)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/DistortionCorr.html">Example 3 (Distortion corr)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for httomolibgpu.recon.rotation</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Copyright 2022 Diamond Light Source Ltd.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Created By  : Tomography Team at DLS &lt;scientificsoftware@diamond.ac.uk&gt;</span>
+<span class="c1"># Created Date: 01 November 2022</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="sd">&quot;&quot;&quot;Modules for finding the axis of rotation for 180 and 360 degrees scans&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">httomolibgpu</span><span class="w"> </span><span class="kn">import</span> <span class="n">cupywrapper</span>
+
+<span class="n">cp</span> <span class="o">=</span> <span class="n">cupywrapper</span><span class="o">.</span><span class="n">cp</span>
+<span class="n">cupy_run</span> <span class="o">=</span> <span class="n">cupywrapper</span><span class="o">.</span><span class="n">cupy_run</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mock</span>
+
+<span class="k">if</span> <span class="n">cupy_run</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">httomolibgpu.cuda_kernels</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_cuda_module</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">cupyx.scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">shift</span><span class="p">,</span> <span class="n">gaussian_filter</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">skimage.registration</span><span class="w"> </span><span class="kn">import</span> <span class="n">phase_cross_correlation</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">cupyx.scipy.fftpack</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_fft_plan</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">cupyx.scipy.fft</span><span class="w"> </span><span class="kn">import</span> <span class="n">fft2</span><span class="p">,</span> <span class="n">fftshift</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">load_cuda_module</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">shift</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">gaussian_filter</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">phase_cross_correlation</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">get_fft_plan</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">fft2</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">fftshift</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">fft</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+    <span class="n">rfft2</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">()</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;find_center_vo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;find_center_360&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;find_center_pc&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="find_center_vo">
+<a class="viewcode-back" href="../../../api/httomolibgpu.recon.rotation.html#httomolibgpu.recon.rotation.find_center_vo">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_center_vo</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">ind</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">average_radius</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">cor_initialisation_value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">smin</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">smax</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="n">srad</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">6.0</span><span class="p">,</span>
+    <span class="n">step</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">ratio</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">drop</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find the rotation axis location (aka the centre of rotation) using Nghia Vo&#39;s method. See the paper</span>
+<span class="sd">    :cite:`vo2014reliable`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : cp.ndarray</span>
+<span class="sd">        3D [angles, detY, detX] tomographic data or a 2D [angles, detX] sinogram as a CuPy array.</span>
+<span class="sd">    ind : int, optional</span>
+<span class="sd">        Index of the slice to be used to estimate the CoR. If None is given, then the central sinogram will be extracted from the data array with a possible averaging, see .</span>
+<span class="sd">    average_radius : int</span>
+<span class="sd">        Averaging multiple sinograms around the ind-indexed sinogram to improve the signal-to-noise ratio. It is recommended to keep this parameter smaller than 10.</span>
+<span class="sd">    cor_initialisation_value : float, optional</span>
+<span class="sd">        The initial approximation for the centre of rotation. If the value is None, use the horizontal centre of the projection/sinogram image.</span>
+<span class="sd">    smin : int</span>
+<span class="sd">        Coarse search radius. Reference to the horizontal center of</span>
+<span class="sd">        the sinogram.</span>
+<span class="sd">    smax : int</span>
+<span class="sd">        Coarse search radius. Reference to the horizontal center of</span>
+<span class="sd">        the sinogram.</span>
+<span class="sd">    srad : float</span>
+<span class="sd">        Fine search radius.</span>
+<span class="sd">    step : float</span>
+<span class="sd">        Step of fine searching.</span>
+<span class="sd">    ratio : float</span>
+<span class="sd">        The ratio between the FOV of the camera and the size of object.</span>
+<span class="sd">        It&#39;s used to generate the mask.</span>
+<span class="sd">    drop : int</span>
+<span class="sd">        Drop lines around vertical center of the mask.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float32</span>
+<span class="sd">        Rotation axis location with a subpixel precision.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># if 2d sinogram is given it is extended into a 3D array along the vertical dimension</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">angles_tot</span><span class="p">,</span> <span class="n">detY_size</span><span class="p">,</span> <span class="n">detX_size</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="k">if</span> <span class="n">ind</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">detY_size</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># middle slice index</span>
+        <span class="c1"># averaging the data here to improve SNR</span>
+        <span class="k">if</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">average_radius</span> <span class="o">&gt;=</span> <span class="n">detY_size</span><span class="p">:</span>
+            <span class="c1"># reduce the averaging radius</span>
+            <span class="n">average_radius</span> <span class="o">=</span> <span class="n">ind</span>
+        <span class="k">if</span> <span class="n">ind</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">_sino</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">[:,</span> <span class="n">ind</span> <span class="o">-</span> <span class="n">average_radius</span> <span class="p">:</span> <span class="n">ind</span> <span class="o">+</span> <span class="n">average_radius</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_sino</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">ind</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_sino</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">ind</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="k">if</span> <span class="n">cor_initialisation_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cor_initialisation_value</span> <span class="o">=</span> <span class="p">(</span><span class="n">detX_size</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+
+    <span class="c1"># downsampling ratios</span>
+    <span class="n">dsp_angle</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">dsp_detX</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">detX_size</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">:</span>
+        <span class="n">dsp_detX</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">angles_tot</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">:</span>
+        <span class="n">dsp_angle</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="n">start_cor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">cor_initialisation_value</span> <span class="o">+</span> <span class="n">smin</span><span class="p">)</span> <span class="o">/</span> <span class="n">dsp_detX</span><span class="p">))</span>
+    <span class="n">stop_cor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">cor_initialisation_value</span> <span class="o">+</span> <span class="n">smax</span><span class="p">)</span> <span class="o">/</span> <span class="n">dsp_detX</span><span class="p">))</span>
+    <span class="n">fine_srange</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">srad</span><span class="p">,</span> <span class="n">dsp_detX</span><span class="p">)</span>
+    <span class="n">off_set</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dsp_detX</span> <span class="k">if</span> <span class="n">dsp_detX</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+    <span class="c1"># initiate denoising</span>
+    <span class="n">_sino_cs</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">_sino</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reflect&quot;</span><span class="p">)</span>
+    <span class="n">_sino_fs</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">_sino</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reflect&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Downsampling by averaging along a chosen dimension</span>
+    <span class="k">if</span> <span class="n">dsp_angle</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">dsp_detX</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">_sino_cs</span> <span class="o">=</span> <span class="n">_downsample</span><span class="p">(</span><span class="n">_sino_cs</span><span class="p">,</span> <span class="n">dsp_angle</span><span class="p">,</span> <span class="n">dsp_detX</span><span class="p">)</span>
+
+    <span class="n">init_cen</span> <span class="o">=</span> <span class="n">_search_coarse</span><span class="p">(</span><span class="n">_sino_cs</span><span class="p">,</span> <span class="n">start_cor</span><span class="p">,</span> <span class="n">stop_cor</span><span class="p">,</span> <span class="n">ratio</span><span class="p">,</span> <span class="n">drop</span><span class="p">)</span>
+
+    <span class="n">fine_cen</span> <span class="o">=</span> <span class="n">_search_fine</span><span class="p">(</span>
+        <span class="n">_sino_fs</span><span class="p">,</span> <span class="n">fine_srange</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">init_cen</span><span class="p">)</span> <span class="o">*</span> <span class="n">dsp_detX</span> <span class="o">+</span> <span class="n">off_set</span><span class="p">,</span> <span class="n">ratio</span><span class="p">,</span> <span class="n">drop</span>
+    <span class="p">)</span>
+    <span class="n">cen_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">fine_cen</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">cen_np</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">cor_initialisation_value</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">cen_np</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_search_coarse</span><span class="p">(</span><span class="n">sino</span><span class="p">,</span> <span class="n">smin</span><span class="p">,</span> <span class="n">smax</span><span class="p">,</span> <span class="n">ratio</span><span class="p">,</span> <span class="n">drop</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">)</span> <span class="o">=</span> <span class="n">sino</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">flip_sino</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">fliplr</span><span class="p">(</span><span class="n">sino</span><span class="p">))</span>
+    <span class="n">comp_sino</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">sino</span><span class="p">))</span>
+
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">_create_mask</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ratio</span> <span class="o">*</span> <span class="n">ncol</span><span class="p">,</span> <span class="n">drop</span><span class="p">)</span>
+    <span class="n">cen_fliplr</span> <span class="o">=</span> <span class="p">(</span><span class="n">ncol</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">start_cor</span><span class="p">,</span> <span class="n">stop_cor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">((</span><span class="n">smin</span><span class="p">,</span> <span class="n">smax</span><span class="p">))</span>
+    <span class="n">start_cor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">start_cor</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">stop_cor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">stop_cor</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">list_cor</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start_cor</span><span class="p">,</span> <span class="n">stop_cor</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">list_shift</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">list_cor</span> <span class="o">-</span> <span class="n">cen_fliplr</span><span class="p">)</span>
+    <span class="n">list_metric</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">list_shift</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="n">sino_sino</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">sino</span><span class="p">,</span> <span class="n">flip_sino</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">shift</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_shift</span><span class="p">):</span>
+        <span class="n">_sino</span> <span class="o">=</span> <span class="n">sino_sino</span><span class="p">[</span><span class="n">nrow</span><span class="p">:]</span>
+        <span class="n">_sino</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">flip_sino</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">shift</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">shift</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">_sino</span><span class="p">[:,</span> <span class="p">:</span><span class="n">shift</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp_sino</span><span class="p">[:,</span> <span class="p">:</span><span class="n">shift</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_sino</span><span class="p">[:,</span> <span class="n">shift</span><span class="p">:]</span> <span class="o">=</span> <span class="n">comp_sino</span><span class="p">[:,</span> <span class="n">shift</span><span class="p">:]</span>
+        <span class="n">list_metric</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fftshift</span><span class="p">(</span><span class="n">fft2</span><span class="p">(</span><span class="n">sino_sino</span><span class="p">)))</span> <span class="o">*</span> <span class="n">mask</span><span class="p">)</span>
+
+    <span class="n">minpos</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">list_metric</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">minpos</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING!!!Global minimum is out of searching range&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Please extend smin: </span><span class="si">{</span><span class="n">smin</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">minpos</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_metric</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING!!!Global minimum is out of searching range&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Please extend smax: </span><span class="si">{</span><span class="n">smax</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">cor</span> <span class="o">=</span> <span class="n">list_cor</span><span class="p">[</span><span class="n">minpos</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">cor</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_search_fine</span><span class="p">(</span><span class="n">sino</span><span class="p">,</span> <span class="n">srad</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">init_cen</span><span class="p">,</span> <span class="n">ratio</span><span class="p">,</span> <span class="n">drop</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">)</span> <span class="o">=</span> <span class="n">sino</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">flip_sino</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">fliplr</span><span class="p">(</span><span class="n">sino</span><span class="p">))</span>
+    <span class="n">comp_sino</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">sino</span><span class="p">))</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">_create_mask</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ratio</span> <span class="o">*</span> <span class="n">ncol</span><span class="p">,</span> <span class="n">drop</span><span class="p">)</span>
+
+    <span class="n">cen_fliplr</span> <span class="o">=</span> <span class="p">(</span><span class="n">ncol</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">srad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">srad</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">step</span><span class="p">),</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+    <span class="n">init_cen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">init_cen</span><span class="p">,</span> <span class="n">srad</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">-</span> <span class="n">srad</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">list_cor</span> <span class="o">=</span> <span class="n">init_cen</span> <span class="o">+</span> <span class="n">cp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">srad</span><span class="p">,</span> <span class="n">srad</span> <span class="o">+</span> <span class="n">step</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">list_shift</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">list_cor</span> <span class="o">-</span> <span class="n">cen_fliplr</span><span class="p">)</span>
+    <span class="n">list_metric</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">list_shift</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
+
+    <span class="n">_calculate_metric</span><span class="p">(</span><span class="n">list_shift</span><span class="p">,</span> <span class="n">sino</span><span class="p">,</span> <span class="n">flip_sino</span><span class="p">,</span> <span class="n">comp_sino</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">list_metric</span><span class="p">)</span>
+    <span class="n">cor</span> <span class="o">=</span> <span class="n">list_cor</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">list_metric</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">cor</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_create_mask</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">drop</span><span class="p">):</span>
+    <span class="n">du</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ncol</span>
+    <span class="n">dv</span> <span class="o">=</span> <span class="p">(</span><span class="n">nrow</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nrow</span> <span class="o">*</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">cen_row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">nrow</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">cen_col</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">ncol</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">drop</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">drop</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">0.05</span> <span class="o">*</span> <span class="n">nrow</span><span class="p">))])</span>
+
+    <span class="n">block_x</span> <span class="o">=</span> <span class="mi">128</span>
+    <span class="n">block_y</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">block_dims</span> <span class="o">=</span> <span class="p">(</span><span class="n">block_x</span><span class="p">,</span> <span class="n">block_y</span><span class="p">)</span>
+    <span class="n">grid_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">ncol</span> <span class="o">+</span> <span class="n">block_x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">block_x</span>
+    <span class="n">grid_y</span> <span class="o">=</span> <span class="n">nrow</span>
+    <span class="n">grid_dims</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid_x</span><span class="p">,</span> <span class="n">grid_y</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">ncol</span><span class="p">,</span>
+        <span class="n">nrow</span><span class="p">,</span>
+        <span class="n">cen_col</span><span class="p">,</span>
+        <span class="n">cen_row</span><span class="p">,</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">du</span><span class="p">),</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">dv</span><span class="p">),</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">radius</span><span class="p">),</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">drop</span><span class="p">),</span>
+        <span class="n">mask</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">module</span> <span class="o">=</span> <span class="n">load_cuda_module</span><span class="p">(</span><span class="s2">&quot;generate_mask&quot;</span><span class="p">)</span>
+    <span class="n">kernel</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s2">&quot;generate_mask_full&quot;</span><span class="p">)</span>
+    <span class="n">kernel</span><span class="p">(</span><span class="n">grid_dims</span><span class="p">,</span> <span class="n">block_dims</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mask</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">round_up</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_available_gpu_memory</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">dev</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">Device</span><span class="p">()</span>
+    <span class="c1"># first, let&#39;s make some space</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">get_default_memory_pool</span><span class="p">()</span><span class="o">.</span><span class="n">free_all_blocks</span><span class="p">()</span>
+    <span class="n">cache</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get_plan_cache</span><span class="p">()</span>
+    <span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">available_memory</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">mem_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cp</span><span class="o">.</span><span class="n">get_default_memory_pool</span><span class="p">()</span><span class="o">.</span><span class="n">free_bytes</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">available_memory</span> <span class="o">*</span> <span class="mf">0.9</span><span class="p">)</span>  <span class="c1"># 10% safety margin</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_calculate_chunks</span><span class="p">(</span>
+    <span class="n">nshifts</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">shift_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">available_memory</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">available_memory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">available_memory</span> <span class="o">=</span> <span class="n">_get_available_gpu_memory</span><span class="p">()</span>
+
+    <span class="n">available_memory</span> <span class="o">-=</span> <span class="n">shift_size</span>
+    <span class="n">freq_domain_size</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">shift_size</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># it needs full (FFT), with complex64, so it&#39;s double</span>
+    <span class="p">)</span>
+    <span class="n">fft_plan_size</span> <span class="o">=</span> <span class="n">freq_domain_size</span>
+    <span class="n">size_per_shift</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">fft_plan_size</span> <span class="o">+</span> <span class="n">freq_domain_size</span> <span class="o">+</span> <span class="n">shift_size</span><span class="p">)</span>
+    <span class="n">nshift_max</span> <span class="o">=</span> <span class="n">available_memory</span> <span class="o">//</span> <span class="n">size_per_shift</span>
+    <span class="k">assert</span> <span class="n">nshift_max</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Not enough memory to process&quot;</span>
+    <span class="n">num_chunks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">nshifts</span> <span class="o">/</span> <span class="n">nshift_max</span><span class="p">))</span>
+    <span class="n">chunk_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">nshifts</span> <span class="o">/</span> <span class="n">num_chunks</span><span class="p">))</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="p">[</span><span class="n">chunk_size</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_chunks</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">stop_idx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">chunks</span><span class="p">))</span>
+    <span class="n">stop_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nshifts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stop_idx</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_calculate_metric</span><span class="p">(</span><span class="n">list_shift</span><span class="p">,</span> <span class="n">sino</span><span class="p">,</span> <span class="n">flip_sino</span><span class="p">,</span> <span class="n">comp_sino</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+    <span class="c1"># this tries to simplify - if shift_col is integer, no need to spline interpolate</span>
+    <span class="k">assert</span> <span class="n">list_shift</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;shifts must be single precision floats&quot;</span>
+    <span class="k">assert</span> <span class="n">sino</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;sino must be float32&quot;</span>
+    <span class="k">assert</span> <span class="n">flip_sino</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;flip_sino must be float32&quot;</span>
+    <span class="k">assert</span> <span class="n">comp_sino</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;comp_sino must be float32&quot;</span>
+    <span class="k">assert</span> <span class="n">out</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;out must be float32&quot;</span>
+    <span class="k">assert</span> <span class="n">flip_sino</span><span class="o">.</span><span class="n">flags</span><span class="p">[</span><span class="s2">&quot;C_CONTIGUOUS&quot;</span><span class="p">],</span> <span class="s2">&quot;flip_sino must be C-contiguous&quot;</span>
+    <span class="k">assert</span> <span class="n">comp_sino</span><span class="o">.</span><span class="n">flags</span><span class="p">[</span><span class="s2">&quot;C_CONTIGUOUS&quot;</span><span class="p">],</span> <span class="s2">&quot;comp_sino must be C-contiguous&quot;</span>
+    <span class="k">assert</span> <span class="n">list_shift</span><span class="o">.</span><span class="n">flags</span><span class="p">[</span><span class="s2">&quot;C_CONTIGUOUS&quot;</span><span class="p">],</span> <span class="s2">&quot;list_shift must be C-contiguous&quot;</span>
+    <span class="n">nshifts</span> <span class="o">=</span> <span class="n">list_shift</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">na1</span> <span class="o">=</span> <span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">na2</span> <span class="o">=</span> <span class="n">flip_sino</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">module</span> <span class="o">=</span> <span class="n">load_cuda_module</span><span class="p">(</span><span class="s2">&quot;center_360_shifts&quot;</span><span class="p">)</span>
+    <span class="n">shift_whole_shifts</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s2">&quot;shift_whole_shifts&quot;</span><span class="p">)</span>
+    <span class="c1"># note: we don&#39;t have to calculate the mean here, as we&#39;re only looking for minimum metric.</span>
+    <span class="c1"># The sum is enough.</span>
+    <span class="n">masked_sum_abs_kernel</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ReductionKernel</span><span class="p">(</span>
+        <span class="n">in_params</span><span class="o">=</span><span class="s2">&quot;complex64 x, float32 mask&quot;</span><span class="p">,</span>  <span class="c1"># input, complex + mask</span>
+        <span class="n">out_params</span><span class="o">=</span><span class="s2">&quot;float32 out&quot;</span><span class="p">,</span>  <span class="c1"># output, real</span>
+        <span class="n">map_expr</span><span class="o">=</span><span class="s2">&quot;abs(x) * mask&quot;</span><span class="p">,</span>
+        <span class="n">reduce_expr</span><span class="o">=</span><span class="s2">&quot;a + b&quot;</span><span class="p">,</span>
+        <span class="n">post_map_expr</span><span class="o">=</span><span class="s2">&quot;out = a&quot;</span><span class="p">,</span>
+        <span class="n">identity</span><span class="o">=</span><span class="s2">&quot;0.0f&quot;</span><span class="p">,</span>
+        <span class="n">reduce_type</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;masked_sum_abs&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># determine how many shifts we can fit in the available memory</span>
+    <span class="c1"># and iterate in chunks</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="n">_calculate_chunks</span><span class="p">(</span>
+        <span class="n">nshifts</span><span class="p">,</span> <span class="p">(</span><span class="n">na1</span> <span class="o">+</span> <span class="n">na2</span><span class="p">)</span> <span class="o">*</span> <span class="n">flip_sino</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">()</span><span class="o">.</span><span class="n">nbytes</span>
+    <span class="p">)</span>
+
+    <span class="n">mat</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">chunks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">na1</span> <span class="o">+</span> <span class="n">na2</span><span class="p">,</span> <span class="n">flip_sino</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">mat</span><span class="p">[:,</span> <span class="p">:</span><span class="n">na1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">sino</span>
+
+    <span class="c1"># explicitly create FFT plan here, so it&#39;s not cached and clearly re-used</span>
+    <span class="n">plan</span> <span class="o">=</span> <span class="n">get_fft_plan</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">value_type</span><span class="o">=</span><span class="s2">&quot;C2C&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">stop_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chunks</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># more than one iteration means we&#39;re tight on memory, so clear up freed blocks</span>
+            <span class="n">mat_freq</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">get_default_memory_pool</span><span class="p">()</span><span class="o">.</span><span class="n">free_all_blocks</span><span class="p">()</span>
+
+        <span class="n">start_idx</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">chunks</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">stop_idx</span> <span class="o">-</span> <span class="n">start_idx</span>
+
+        <span class="c1"># first, handle the integer shifts without spline in a raw kernel,</span>
+        <span class="c1"># and shift in the comp_sino one accordingly</span>
+        <span class="n">bx</span> <span class="o">=</span> <span class="mi">128</span>
+        <span class="n">gx</span> <span class="o">=</span> <span class="p">(</span><span class="n">comp_sino</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">bx</span>
+        <span class="n">shift_whole_shifts</span><span class="p">(</span>
+            <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span> <span class="n">na2</span><span class="p">,</span> <span class="n">size</span><span class="p">),</span>  <span class="c1">####</span>
+            <span class="n">block</span><span class="o">=</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">args</span><span class="o">=</span><span class="p">(</span>
+                <span class="n">flip_sino</span><span class="p">,</span>
+                <span class="n">comp_sino</span><span class="p">,</span>
+                <span class="n">list_shift</span><span class="p">[</span><span class="n">start_idx</span><span class="p">:</span><span class="n">stop_idx</span><span class="p">],</span>
+                <span class="n">mat</span><span class="p">[:,</span> <span class="n">na1</span><span class="p">:,</span> <span class="p">:],</span>
+                <span class="n">comp_sino</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">na1</span> <span class="o">+</span> <span class="n">na2</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># now we can only look at the spline shifting, the rest is done</span>
+        <span class="n">list_shift_host</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">list_shift</span><span class="p">[</span><span class="n">start_idx</span><span class="p">:</span><span class="n">stop_idx</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">list_shift_host</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">shift_col</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">list_shift_host</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">shift_col</span><span class="o">.</span><span class="n">is_integer</span><span class="p">():</span>
+                <span class="n">shifted</span> <span class="o">=</span> <span class="n">shift</span><span class="p">(</span><span class="n">flip_sino</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">shift_col</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">prefilter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">shift_int</span> <span class="o">=</span> <span class="n">round_up</span><span class="p">(</span><span class="n">shift_col</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">shift_int</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">na1</span><span class="p">:,</span> <span class="n">shift_int</span><span class="p">:]</span> <span class="o">=</span> <span class="n">shifted</span><span class="p">[:,</span> <span class="n">shift_int</span><span class="p">:]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">na1</span><span class="p">:,</span> <span class="p">:</span><span class="n">shift_int</span><span class="p">]</span> <span class="o">=</span> <span class="n">shifted</span><span class="p">[:,</span> <span class="p">:</span><span class="n">shift_int</span><span class="p">]</span>
+
+        <span class="c1"># stack and transform</span>
+        <span class="c1"># (we do the full sized mat FFT, even though the last chunk may be smaller, to</span>
+        <span class="c1"># make sure we can re-use the same FFT plan as before)</span>
+        <span class="n">mat_freq</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="n">fft2</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">norm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plan</span><span class="o">=</span><span class="n">plan</span><span class="p">),</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+        <span class="n">masked_sum_abs_kernel</span><span class="p">(</span>
+            <span class="n">mat_freq</span><span class="p">[:</span><span class="n">size</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">mask</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">[</span><span class="n">start_idx</span><span class="p">:</span><span class="n">stop_idx</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_downsample</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">dsp_fact0</span><span class="p">,</span> <span class="n">dsp_fact1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Downsample an image by averaging.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">        image : 2D array.</span>
+<span class="sd">        dsp_fact0 : downsampling factor along axis 0.</span>
+<span class="sd">        dsp_fact1 : downsampling factor along axis 1.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ---------</span>
+<span class="sd">        image_dsp : Downsampled image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">dsp_fact0</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">int16</span><span class="p">(</span><span class="n">dsp_fact0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">dsp_fact1</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">int16</span><span class="p">(</span><span class="n">dsp_fact1</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">height_dsp</span> <span class="o">=</span> <span class="n">height</span> <span class="o">//</span> <span class="n">dsp_fact0</span>
+    <span class="n">width_dsp</span> <span class="o">=</span> <span class="n">width</span> <span class="o">//</span> <span class="n">dsp_fact1</span>
+    <span class="k">if</span> <span class="n">dsp_fact0</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">dsp_fact1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">image_dsp</span> <span class="o">=</span> <span class="n">image</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">image_dsp</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">0</span> <span class="p">:</span> <span class="n">dsp_fact0</span> <span class="o">*</span> <span class="n">height_dsp</span><span class="p">,</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">dsp_fact1</span> <span class="o">*</span> <span class="n">width_dsp</span><span class="p">]</span>
+        <span class="n">image_dsp</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">image_dsp</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">height_dsp</span><span class="p">,</span> <span class="n">dsp_fact0</span><span class="p">,</span> <span class="n">width_dsp</span><span class="p">,</span> <span class="n">dsp_fact1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">image_dsp</span>
+
+
+<span class="c1">##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="c1"># # %%%%%%%%%%%%%%%%%%%%%%%%%find_center_360%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="c1"># --- Center of rotation (COR) estimation method ---#</span>
+<div class="viewcode-block" id="find_center_360">
+<a class="viewcode-back" href="../../../api/httomolibgpu.recon.rotation.html#httomolibgpu.recon.rotation.find_center_360">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_center_360</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">ind</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">win_width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">side</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">denoise</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">norm</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">use_overlap</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find the center-of-rotation (COR) in a 360-degree scan and also an offset</span>
+<span class="sd">    to perform data transformation from 360 to 180 degrees scan. See :cite:`vo2021data`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : cp.ndarray</span>
+<span class="sd">        3D tomographic data as a Cupy array.</span>
+<span class="sd">    ind : int, optional</span>
+<span class="sd">        Index of the slice to be used for estimate the CoR and the overlap.</span>
+<span class="sd">    win_width : int, optional</span>
+<span class="sd">        Window width used for finding the overlap area.</span>
+<span class="sd">    side : {None, 0, 1}, optional</span>
+<span class="sd">        Overlap size. Only there options: None, 0, or 1. &quot;None&quot; corresponds</span>
+<span class="sd">        to fully automated determination. &quot;0&quot; corresponds to the left side.</span>
+<span class="sd">        &quot;1&quot; corresponds to the right side.</span>
+<span class="sd">    denoise : bool, optional</span>
+<span class="sd">        Apply the Gaussian filter if True.</span>
+<span class="sd">    norm : bool, optional</span>
+<span class="sd">        Apply the normalisation if True.</span>
+<span class="sd">    use_overlap : bool, optional</span>
+<span class="sd">        Use the combination of images in the overlap area for calculating</span>
+<span class="sd">        correlation coefficients if True.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cor : float</span>
+<span class="sd">        Center-of-rotation.</span>
+<span class="sd">    overlap : float</span>
+<span class="sd">        Width of the overlap area between two halves of the sinogram.</span>
+<span class="sd">    side : int</span>
+<span class="sd">        Overlap side between two halves of the sinogram.</span>
+<span class="sd">    overlap_position : float</span>
+<span class="sd">        Position of the window in the first image giving the best</span>
+<span class="sd">        correlation metric.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;A 3D array must be provided&quot;</span><span class="p">)</span>
+
+    <span class="c1"># this method works with a 360-degree sinogram.</span>
+    <span class="k">if</span> <span class="n">ind</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_sino</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_sino</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">ind</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="p">(</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">)</span> <span class="o">=</span> <span class="n">_sino</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">nrow_180</span> <span class="o">=</span> <span class="n">nrow</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">sino_top</span> <span class="o">=</span> <span class="n">_sino</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">nrow_180</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">sino_bot</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">fliplr</span><span class="p">(</span><span class="n">_sino</span><span class="p">[</span><span class="o">-</span><span class="n">nrow_180</span><span class="p">:,</span> <span class="p">:])</span>
+    <span class="p">(</span><span class="n">overlap</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">overlap_position</span><span class="p">)</span> <span class="o">=</span> <span class="n">_find_overlap</span><span class="p">(</span>
+        <span class="n">sino_top</span><span class="p">,</span> <span class="n">sino_bot</span><span class="p">,</span> <span class="n">win_width</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">denoise</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">use_overlap</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">side</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cor</span> <span class="o">=</span> <span class="n">overlap</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">-</span> <span class="mf">1.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cor</span> <span class="o">=</span> <span class="n">ncol</span> <span class="o">-</span> <span class="n">overlap</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">-</span> <span class="mf">1.0</span>
+
+    <span class="k">return</span> <span class="n">cor</span><span class="p">,</span> <span class="n">overlap</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">overlap_position</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_find_overlap</span><span class="p">(</span>
+    <span class="n">mat1</span><span class="p">,</span> <span class="n">mat2</span><span class="p">,</span> <span class="n">win_width</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">denoise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_overlap</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find the overlap area and overlap side between two images (Ref. [1]) where</span>
+<span class="sd">    the overlap side referring to the first image.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mat1 : array_like</span>
+<span class="sd">        2D array. Projection image or sinogram image.</span>
+<span class="sd">    mat2 :  array_like</span>
+<span class="sd">        2D array. Projection image or sinogram image.</span>
+<span class="sd">    win_width : int</span>
+<span class="sd">        Width of the searching window.</span>
+<span class="sd">    side : {None, 0, 1}, optional</span>
+<span class="sd">        Only there options: None, 0, or 1. &quot;None&quot; corresponding to fully</span>
+<span class="sd">        automated determination. &quot;0&quot; corresponding to the left side. &quot;1&quot;</span>
+<span class="sd">        corresponding to the right side.</span>
+<span class="sd">    denoise : bool, optional</span>
+<span class="sd">        Apply the Gaussian filter if True.</span>
+<span class="sd">    norm : bool, optional</span>
+<span class="sd">        Apply the normalization if True.</span>
+<span class="sd">    use_overlap : bool, optional</span>
+<span class="sd">        Use the combination of images in the overlap area for calculating</span>
+<span class="sd">        correlation coefficients if True.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    overlap : float</span>
+<span class="sd">        Width of the overlap area between two images.</span>
+<span class="sd">    side : int</span>
+<span class="sd">        Overlap side between two images.</span>
+<span class="sd">    overlap_position : float</span>
+<span class="sd">        Position of the window in the first image giving the best</span>
+<span class="sd">        correlation metric.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ncol1</span> <span class="o">=</span> <span class="n">mat1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ncol2</span> <span class="o">=</span> <span class="n">mat2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">win_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">win_width</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">ncol1</span><span class="p">,</span> <span class="n">ncol2</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">side</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">list_metric</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span> <span class="o">=</span> <span class="n">_search_overlap</span><span class="p">(</span>
+            <span class="n">mat1</span><span class="p">,</span>
+            <span class="n">mat2</span><span class="p">,</span>
+            <span class="n">win_width</span><span class="p">,</span>
+            <span class="n">side</span><span class="o">=</span><span class="n">side</span><span class="p">,</span>
+            <span class="n">denoise</span><span class="o">=</span><span class="n">denoise</span><span class="p">,</span>
+            <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+            <span class="n">use_overlap</span><span class="o">=</span><span class="n">use_overlap</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">overlap_position</span> <span class="o">=</span> <span class="n">_calculate_curvature</span><span class="p">(</span><span class="n">list_metric</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">overlap_position</span> <span class="o">+=</span> <span class="n">offset</span>
+        <span class="n">overlap</span> <span class="o">=</span> <span class="n">ncol1</span> <span class="o">-</span> <span class="n">overlap_position</span> <span class="o">+</span> <span class="n">win_width</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">side</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">list_metric</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span> <span class="o">=</span> <span class="n">_search_overlap</span><span class="p">(</span>
+            <span class="n">mat1</span><span class="p">,</span>
+            <span class="n">mat2</span><span class="p">,</span>
+            <span class="n">win_width</span><span class="p">,</span>
+            <span class="n">side</span><span class="o">=</span><span class="n">side</span><span class="p">,</span>
+            <span class="n">denoise</span><span class="o">=</span><span class="n">denoise</span><span class="p">,</span>
+            <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+            <span class="n">use_overlap</span><span class="o">=</span><span class="n">use_overlap</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">overlap_position</span> <span class="o">=</span> <span class="n">_calculate_curvature</span><span class="p">(</span><span class="n">list_metric</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">overlap_position</span> <span class="o">+=</span> <span class="n">offset</span>
+        <span class="n">overlap</span> <span class="o">=</span> <span class="n">overlap_position</span> <span class="o">+</span> <span class="n">win_width</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">list_metric1</span><span class="p">,</span> <span class="n">offset1</span><span class="p">)</span> <span class="o">=</span> <span class="n">_search_overlap</span><span class="p">(</span>
+            <span class="n">mat1</span><span class="p">,</span>
+            <span class="n">mat2</span><span class="p">,</span>
+            <span class="n">win_width</span><span class="p">,</span>
+            <span class="n">side</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">denoise</span><span class="o">=</span><span class="n">denoise</span><span class="p">,</span>
+            <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+            <span class="n">use_overlap</span><span class="o">=</span><span class="n">use_overlap</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="p">(</span><span class="n">list_metric2</span><span class="p">,</span> <span class="n">offset2</span><span class="p">)</span> <span class="o">=</span> <span class="n">_search_overlap</span><span class="p">(</span>
+            <span class="n">mat1</span><span class="p">,</span>
+            <span class="n">mat2</span><span class="p">,</span>
+            <span class="n">win_width</span><span class="p">,</span>
+            <span class="n">side</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">denoise</span><span class="o">=</span><span class="n">denoise</span><span class="p">,</span>
+            <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+            <span class="n">use_overlap</span><span class="o">=</span><span class="n">use_overlap</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="p">(</span><span class="n">curvature1</span><span class="p">,</span> <span class="n">overlap_position1</span><span class="p">)</span> <span class="o">=</span> <span class="n">_calculate_curvature</span><span class="p">(</span><span class="n">list_metric1</span><span class="p">)</span>
+        <span class="n">overlap_position1</span> <span class="o">+=</span> <span class="n">offset1</span>
+        <span class="p">(</span><span class="n">curvature2</span><span class="p">,</span> <span class="n">overlap_position2</span><span class="p">)</span> <span class="o">=</span> <span class="n">_calculate_curvature</span><span class="p">(</span><span class="n">list_metric2</span><span class="p">)</span>
+        <span class="n">overlap_position2</span> <span class="o">+=</span> <span class="n">offset2</span>
+
+        <span class="k">if</span> <span class="n">curvature1</span> <span class="o">&gt;</span> <span class="n">curvature2</span><span class="p">:</span>
+            <span class="n">side</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">overlap_position</span> <span class="o">=</span> <span class="n">overlap_position1</span>
+            <span class="n">overlap</span> <span class="o">=</span> <span class="n">ncol1</span> <span class="o">-</span> <span class="n">overlap_position</span> <span class="o">+</span> <span class="n">win_width</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">side</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">overlap_position</span> <span class="o">=</span> <span class="n">overlap_position2</span>
+            <span class="n">overlap</span> <span class="o">=</span> <span class="n">overlap_position</span> <span class="o">+</span> <span class="n">win_width</span> <span class="o">//</span> <span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">overlap</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">overlap_position</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_search_overlap</span><span class="p">(</span>
+    <span class="n">mat1</span><span class="p">,</span> <span class="n">mat2</span><span class="p">,</span> <span class="n">win_width</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">denoise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_overlap</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the correlation metrics between a rectangular region, defined</span>
+<span class="sd">    by the window width, on the utmost left/right side of image 2 and the</span>
+<span class="sd">    same size region in image 1 where the region is slided across image 1.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mat1 : array_like</span>
+<span class="sd">        2D array. Projection image or sinogram image.</span>
+<span class="sd">    mat2 : array_like</span>
+<span class="sd">        2D array. Projection image or sinogram image.</span>
+<span class="sd">    win_width : int</span>
+<span class="sd">        Width of the searching window.</span>
+<span class="sd">    side : {0, 1}</span>
+<span class="sd">        Only two options: 0 or 1. It is used to indicate the overlap side</span>
+<span class="sd">        respects to image 1. &quot;0&quot; corresponds to the left side. &quot;1&quot; corresponds</span>
+<span class="sd">        to the right side.</span>
+<span class="sd">    denoise : bool, optional</span>
+<span class="sd">        Apply the Gaussian filter if True.</span>
+<span class="sd">    norm : bool, optional</span>
+<span class="sd">        Apply the normalization if True.</span>
+<span class="sd">    use_overlap : bool, optional</span>
+<span class="sd">        Use the combination of images in the overlap area for calculating</span>
+<span class="sd">        correlation coefficients if True.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list_metric : array_like</span>
+<span class="sd">        1D array. List of the correlation metrics.</span>
+<span class="sd">    offset : int</span>
+<span class="sd">        Initial position of the searching window where the position</span>
+<span class="sd">        corresponds to the center of the window.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">denoise</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># note: the filtering makes the output contiguous</span>
+        <span class="n">mat1</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reflect&quot;</span><span class="p">)</span>
+        <span class="n">mat2</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reflect&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mat1</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+        <span class="n">mat2</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="n">nrow1</span><span class="p">,</span> <span class="n">ncol1</span><span class="p">)</span> <span class="o">=</span> <span class="n">mat1</span><span class="o">.</span><span class="n">shape</span>
+    <span class="p">(</span><span class="n">nrow2</span><span class="p">,</span> <span class="n">ncol2</span><span class="p">)</span> <span class="o">=</span> <span class="n">mat2</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="k">if</span> <span class="n">nrow1</span> <span class="o">!=</span> <span class="n">nrow2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Two images are not at the same height!!!&quot;</span><span class="p">)</span>
+
+    <span class="n">win_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">win_width</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">ncol1</span><span class="p">,</span> <span class="n">ncol2</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="n">win_width</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">win_width</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">offset</span>  <span class="c1"># Make it even</span>
+
+    <span class="n">list_metric</span> <span class="o">=</span> <span class="n">_calc_metrics</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="n">mat2</span><span class="p">,</span> <span class="n">win_width</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">use_overlap</span><span class="p">,</span> <span class="n">norm</span><span class="p">)</span>
+
+    <span class="n">min_metric</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">list_metric</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">min_metric</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="n">list_metric</span> <span class="o">/=</span> <span class="n">min_metric</span>
+
+    <span class="k">return</span> <span class="n">list_metric</span><span class="p">,</span> <span class="n">offset</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_calc_metrics</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="n">mat2</span><span class="p">,</span> <span class="n">win_width</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">use_overlap</span><span class="p">,</span> <span class="n">norm</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">mat1</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;only float32 supported&quot;</span>
+    <span class="k">assert</span> <span class="n">mat2</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="s2">&quot;only float32 supported&quot;</span>
+    <span class="k">assert</span> <span class="n">mat1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">mat2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">mat1</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">c_contiguous</span><span class="p">,</span> <span class="s2">&quot;only contiguos arrays supported&quot;</span>
+    <span class="k">assert</span> <span class="n">mat2</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">c_contiguous</span><span class="p">,</span> <span class="s2">&quot;only contiguos arrays supported&quot;</span>
+
+    <span class="n">_calc_metrics_module</span> <span class="o">=</span> <span class="n">load_cuda_module</span><span class="p">(</span>
+        <span class="s2">&quot;calc_metrics&quot;</span><span class="p">,</span>
+        <span class="n">name_expressions</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;calc_metrics_kernel&lt;false, false&gt;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;calc_metrics_kernel&lt;true, false&gt;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;calc_metrics_kernel&lt;false, true&gt;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;calc_metrics_kernel&lt;true, true&gt;&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;--maxrregcount=32&quot;</span><span class="p">,),</span>
+    <span class="p">)</span>
+
+    <span class="n">num_pos</span> <span class="o">=</span> <span class="n">mat1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">win_width</span>
+    <span class="n">list_metric</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">num_pos</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">mat1</span><span class="p">,</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">mat1</span><span class="o">.</span><span class="n">strides</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">mat1</span><span class="o">.</span><span class="n">strides</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+        <span class="n">mat2</span><span class="p">,</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">mat2</span><span class="o">.</span><span class="n">strides</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">mat2</span><span class="o">.</span><span class="n">strides</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">win_width</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">mat1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">side</span><span class="p">),</span>
+        <span class="n">list_metric</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">num_pos</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">smem</span> <span class="o">=</span> <span class="n">block</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">6</span> <span class="k">if</span> <span class="n">use_overlap</span> <span class="k">else</span> <span class="n">block</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span>
+    <span class="n">bool2str</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">True</span> <span class="k">else</span> <span class="s2">&quot;false&quot;</span>
+    <span class="n">calc_metrics</span> <span class="o">=</span> <span class="n">_calc_metrics_module</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;calc_metrics_kernel&lt;</span><span class="si">{</span><span class="n">bool2str</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">bool2str</span><span class="p">(</span><span class="n">use_overlap</span><span class="p">)</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+    <span class="p">)</span>
+    <span class="n">calc_metrics</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="n">block</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">shared_mem</span><span class="o">=</span><span class="n">smem</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">list_metric</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_calculate_curvature</span><span class="p">(</span><span class="n">list_metric</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the curvature of a fitted curve going through the minimum</span>
+<span class="sd">    value of a metric list.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    list_metric : array_like</span>
+<span class="sd">        1D array. List of metrics.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    curvature : float</span>
+<span class="sd">        Quadratic coefficient of the parabola fitting.</span>
+<span class="sd">    min_pos : float</span>
+<span class="sd">        Position of the minimum value with sub-pixel accuracy.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">radi</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">num_metric</span> <span class="o">=</span> <span class="n">list_metric</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">min_metric_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">list_metric</span><span class="p">))</span>
+    <span class="n">min_pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">min_metric_idx</span><span class="p">,</span> <span class="n">radi</span><span class="p">,</span> <span class="n">num_metric</span> <span class="o">-</span> <span class="n">radi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="c1"># work mostly on CPU here - we have very small arrays here</span>
+    <span class="n">list1</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">list_metric</span><span class="p">[</span><span class="n">min_pos</span> <span class="o">-</span> <span class="n">radi</span> <span class="p">:</span> <span class="n">min_pos</span> <span class="o">+</span> <span class="n">radi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">afact1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">list1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">list2</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">list_metric</span><span class="p">[</span><span class="n">min_pos</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">min_pos</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="p">(</span><span class="n">afact2</span><span class="p">,</span> <span class="n">bfact2</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">min_pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">min_pos</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span> <span class="n">list2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">curvature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">afact1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">afact2</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="o">-</span><span class="n">bfact2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">afact2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">min_pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;=</span> <span class="n">min_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">min_pos</span> <span class="o">=</span> <span class="n">num</span>
+
+    <span class="k">return</span> <span class="n">curvature</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">min_pos</span><span class="p">)</span>
+
+
+<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+
+
+<span class="c1">## %%%%%%%%%%%%%%%%%%%%%%find_center_pc%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<div class="viewcode-block" id="find_center_pc">
+<a class="viewcode-back" href="../../../api/httomolibgpu.recon.rotation.html#httomolibgpu.recon.rotation.find_center_pc">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_center_pc</span><span class="p">(</span>
+    <span class="n">proj1</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">proj2</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">tol</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">rotc_guess</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find rotation axis location by finding the offset between the first</span>
+<span class="sd">    projection and a mirrored projection 180 degrees apart using</span>
+<span class="sd">    phase correlation in Fourier space.</span>
+<span class="sd">    The `phase_cross_correlation` function uses cross-correlation in Fourier</span>
+<span class="sd">    space, optionally employing an upsampled matrix-multiplication DFT to</span>
+<span class="sd">    achieve arbitrary subpixel precision. See :cite:`guizar2008efficient`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    proj1 : cp.ndarray</span>
+<span class="sd">        Projection from the 0th degree angle.</span>
+<span class="sd">    proj2 : cp.ndarray</span>
+<span class="sd">        Projection from the 180th degree angle.</span>
+<span class="sd">    tol : float, optional</span>
+<span class="sd">        Subpixel accuracy. Defaults to 0.5.</span>
+<span class="sd">    rotc_guess : float, optional</span>
+<span class="sd">        Initial guess value for the rotation center. Defaults to None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    np.float32</span>
+<span class="sd">        Rotation axis location.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">imgshift</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="k">if</span> <span class="n">rotc_guess</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">rotc_guess</span> <span class="o">-</span> <span class="p">(</span><span class="n">proj1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+
+    <span class="n">proj1</span> <span class="o">=</span> <span class="n">shift</span><span class="p">(</span><span class="n">proj1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">imgshift</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;constant&quot;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">proj2</span> <span class="o">=</span> <span class="n">shift</span><span class="p">(</span><span class="n">proj2</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">imgshift</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;constant&quot;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># create reflection of second projection</span>
+    <span class="n">proj2</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">fliplr</span><span class="p">(</span><span class="n">proj2</span><span class="p">)</span>
+
+    <span class="c1"># do phase cross correlation between two images</span>
+    <span class="n">shiftr</span> <span class="o">=</span> <span class="n">phase_cross_correlation</span><span class="p">(</span>
+        <span class="n">reference_image</span><span class="o">=</span><span class="n">proj1</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">moving_image</span><span class="o">=</span><span class="n">proj2</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">upsample_factor</span><span class="o">=</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">tol</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Compute center of rotation as the center of first image and the</span>
+    <span class="c1"># registered translation with the second image</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">proj1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">shiftr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">center</span> <span class="o">+</span> <span class="n">imgshift</span><span class="p">)</span></div>
+
+
+
+<span class="c1">##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Imaging Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Diamond Light Source.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Mar 10, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
